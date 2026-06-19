@@ -1,0 +1,271 @@
+{
+  "event": {
+    "name": "PXF 12 - Noche de Campeones",
+    "date": "2025-06-19",
+    "promotion": "PXF",
+    "location": "Hermosillo, Sonora, Mexico"
+  },
+  "bouts": [
+    {
+      "bout_number": 1,
+      "label": "Main Event",
+      "weight_class": "Lightweight",
+      "is_title_fight": true,
+      "notes": null,
+      "red_corner": {
+        "input_name": "Juan Garzon",
+        "display_name": "Juan Garzón",
+        "canonical_name": "Juan Garzón",
+        "fighter_id": "juan-garzon",
+        "is_matched": true,
+        "is_debut": false,
+        "match_score": 100.0,
+        "record": {
+          "wins": 8,
+          "losses": 2,
+          "draws": 0,
+          "nc": 0
+        },
+        "record_display": "8-2-0",
+        "weight_class": "Lightweight",
+        "gym": "Sonora Fight Team",
+        "city": "Hermosillo",
+        "country": "Mexico",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Juan+Garz%C3%B3n",
+          "profile_url": "https://www.tapology.com/fightcenter/fighters/juan-garzon-48291"
+        },
+        "status": "matched"
+      },
+      "blue_corner": {
+        "input_name": "Carlos Linebough",
+        "display_name": "Carlos Linebaugh",
+        "canonical_name": "Carlos Linebaugh",
+        "fighter_id": "carlos-linebaugh",
+        "is_matched": true,
+        "is_debut": false,
+        "match_score": 100.0,
+        "record": {
+          "wins": 6,
+          "losses": 3,
+          "draws": 0,
+          "nc": 0
+        },
+        "record_display": "6-3-0",
+        "weight_class": "Lightweight",
+        "gym": "Obregon MMA",
+        "city": "Ciudad Obregón",
+        "country": "Mexico",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Carlos+Linebaugh",
+          "profile_url": "https://www.tapology.com/fightcenter/fighters/carlos-linebaugh-55102"
+        },
+        "status": "matched"
+      },
+      "summary": {
+        "both_fighters_matched": true,
+        "has_debut_fighter": false,
+        "debut_fighters": []
+      }
+    },
+    {
+      "bout_number": 2,
+      "label": "Co-Main",
+      "weight_class": "Welterweight",
+      "is_title_fight": false,
+      "notes": null,
+      "red_corner": {
+        "input_name": "Miguel Resenthal",
+        "display_name": "Miguel Rosenthal",
+        "canonical_name": "Miguel Rosenthal",
+        "fighter_id": "miguel-rosenthal",
+        "is_matched": true,
+        "is_debut": false,
+        "match_score": 100.0,
+        "record": {
+          "wins": 5,
+          "losses": 1,
+          "draws": 0,
+          "nc": 0
+        },
+        "record_display": "5-1-0",
+        "weight_class": "Welterweight",
+        "gym": "Tijuana Top Team",
+        "city": "Nogales",
+        "country": "Mexico",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Miguel+Rosenthal",
+          "profile_url": "https://www.tapology.com/fightcenter/fighters/miguel-rosenthal-60344"
+        },
+        "status": "matched"
+      },
+      "blue_corner": {
+        "input_name": "Diego Martinez (debut)",
+        "display_name": "Diego Martínez",
+        "canonical_name": "Diego Martínez",
+        "fighter_id": "diego-martinez",
+        "is_matched": true,
+        "is_debut": true,
+        "match_score": 100.0,
+        "record": {
+          "wins": 0,
+          "losses": 0,
+          "draws": 0,
+          "nc": 0
+        },
+        "record_display": "0-0-0",
+        "weight_class": "Welterweight",
+        "gym": "Hermosillo Combat Club",
+        "city": "Hermosillo",
+        "country": "Mexico",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Diego+Mart%C3%ADnez",
+          "profile_url": null
+        },
+        "status": "matched"
+      },
+      "summary": {
+        "both_fighters_matched": true,
+        "has_debut_fighter": true,
+        "debut_fighters": [
+          "Diego Martínez"
+        ]
+      }
+    },
+    {
+      "bout_number": 3,
+      "label": "Featured Bout",
+      "weight_class": "Strawweight",
+      "is_title_fight": false,
+      "notes": null,
+      "red_corner": {
+        "input_name": "Ana Lopez",
+        "display_name": "Ana López",
+        "canonical_name": "Ana López",
+        "fighter_id": "ana-lopez",
+        "is_matched": true,
+        "is_debut": false,
+        "match_score": 100.0,
+        "record": {
+          "wins": 4,
+          "losses": 0,
+          "draws": 0,
+          "nc": 0
+        },
+        "record_display": "4-0-0",
+        "weight_class": "Strawweight",
+        "gym": "Sonora Fight Team",
+        "city": "Hermosillo",
+        "country": "Mexico",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Ana+L%C3%B3pez",
+          "profile_url": "https://www.tapology.com/fightcenter/fighters/ana-lopez-71203"
+        },
+        "status": "matched"
+      },
+      "blue_corner": {
+        "input_name": "Patricia Morales (debut)",
+        "display_name": "Patricia Morales",
+        "canonical_name": "Patricia Morales",
+        "fighter_id": "patricia-morales",
+        "is_matched": true,
+        "is_debut": true,
+        "match_score": 100.0,
+        "record": {
+          "wins": 0,
+          "losses": 0,
+          "draws": 0,
+          "nc": 0
+        },
+        "record_display": "0-0-0",
+        "weight_class": "Strawweight",
+        "gym": "Guaymas Fight Lab",
+        "city": "Guaymas",
+        "country": "Mexico",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Patricia+Morales",
+          "profile_url": null
+        },
+        "status": "matched"
+      },
+      "summary": {
+        "both_fighters_matched": true,
+        "has_debut_fighter": true,
+        "debut_fighters": [
+          "Patricia Morales"
+        ]
+      }
+    },
+    {
+      "bout_number": 4,
+      "label": "Preliminary Bout",
+      "weight_class": "Middleweight",
+      "is_title_fight": false,
+      "notes": null,
+      "red_corner": {
+        "input_name": "Ricardo Soto",
+        "display_name": "Ricardo Soto",
+        "canonical_name": "Ricardo Soto",
+        "fighter_id": "ricardo-soto",
+        "is_matched": true,
+        "is_debut": false,
+        "match_score": 100.0,
+        "record": {
+          "wins": 10,
+          "losses": 4,
+          "draws": 1,
+          "nc": 0
+        },
+        "record_display": "10-4-1",
+        "weight_class": "Middleweight",
+        "gym": "Hermosillo Combat Club",
+        "city": "Hermosillo",
+        "country": "Mexico",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Ricardo+Soto",
+          "profile_url": "https://www.tapology.com/fightcenter/fighters/ricardo-soto-33421"
+        },
+        "status": "matched"
+      },
+      "blue_corner": {
+        "input_name": "Jorge Herera",
+        "display_name": "Jorge Herrera",
+        "canonical_name": "Jorge Herrera",
+        "fighter_id": "jorge-herrera",
+        "is_matched": true,
+        "is_debut": false,
+        "match_score": 100.0,
+        "record": {
+          "wins": 7,
+          "losses": 5,
+          "draws": 0,
+          "nc": 0
+        },
+        "record_display": "7-5-0",
+        "weight_class": "Middleweight",
+        "gym": "Culiacán Fight House",
+        "city": "Navojoa",
+        "country": "Mexico",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Jorge+Herrera",
+          "profile_url": "https://www.tapology.com/fightcenter/fighters/jorge-herrera-29877"
+        },
+        "status": "matched"
+      },
+      "summary": {
+        "both_fighters_matched": true,
+        "has_debut_fighter": false,
+        "debut_fighters": []
+      }
+    }
+  ],
+  "metadata": {
+    "processed_at": "2026-06-19T17:03:25.670667+00:00",
+    "version": "0.1.0",
+    "total_bouts": 4,
+    "matched_fighters": 8,
+    "debut_fighters": 2,
+    "unmatched_names": [],
+    "match_threshold": 82.0
+  }
+}
