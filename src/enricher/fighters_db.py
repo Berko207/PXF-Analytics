@@ -1,9 +1,4 @@
-"""Extensible fighter database for PXF Analytics.
-
-This module holds the v0.1 in-memory fighter registry. Each entry can later
-be migrated to ``data/fighters.json`` or a Postgres table without changing the
-enricher API — only the loader needs to change.
-"""
+"""Extensible fighter database for PXF Analytics."""
 
 from __future__ import annotations
 
@@ -11,8 +6,6 @@ from typing import TypedDict
 
 
 class FighterRecord(TypedDict, total=False):
-    """Canonical fighter record stored in the registry."""
-
     id: str
     canonical_name: str
     aliases: list[str]
@@ -25,106 +18,61 @@ class FighterRecord(TypedDict, total=False):
     notes: str | None
 
 
-# Seed database for PXF / Sonora regional scene.
-# Aliases intentionally include common misspellings from local fight cards.
+def _f(
+    id: str,
+    name: str,
+    *,
+    aliases: list[str] | None = None,
+    record: dict[str, int] | None = None,
+    weight_class: str | None = None,
+    gym: str | None = None,
+    city: str = "Hermosillo",
+    slug: str | None = None,
+) -> FighterRecord:
+    return {
+        "id": id,
+        "canonical_name": name,
+        "aliases": aliases or [],
+        "tapology_slug": slug,
+        "record": record or {"wins": 0, "losses": 0, "draws": 0, "nc": 0},
+        "weight_class": weight_class,
+        "gym": gym,
+        "city": city,
+        "country": "Mexico",
+    }
+
+
+# PXF 50 official poster roster (July 4 · Arena Sonora)
 FIGHTER_DATABASE: list[FighterRecord] = [
-    {
-        "id": "juan-garzon",
-        "canonical_name": "Juan Garzón",
-        "aliases": ["Garzon", "J. Garzon", "Juan Garzon", "Garzón"],
-        "tapology_slug": "juan-garzon-48291",
-        "record": {"wins": 8, "losses": 2, "draws": 0, "nc": 0},
-        "weight_class": "Lightweight",
-        "gym": "Sonora Fight Team",
-        "city": "Hermosillo",
-        "country": "Mexico",
-    },
-    {
-        "id": "carlos-linebaugh",
-        "canonical_name": "Carlos Linebaugh",
-        "aliases": ["Linebough", "C. Linebaugh", "Carlos Linebough"],
-        "tapology_slug": "carlos-linebaugh-55102",
-        "record": {"wins": 6, "losses": 3, "draws": 0, "nc": 0},
-        "weight_class": "Lightweight",
-        "gym": "Obregon MMA",
-        "city": "Ciudad Obregón",
-        "country": "Mexico",
-    },
-    {
-        "id": "miguel-rosenthal",
-        "canonical_name": "Miguel Rosenthal",
-        "aliases": ["Resenthal", "M. Rosenthal", "Miguel Resenthal"],
-        "tapology_slug": "miguel-rosenthal-60344",
-        "record": {"wins": 5, "losses": 1, "draws": 0, "nc": 0},
-        "weight_class": "Welterweight",
-        "gym": "Tijuana Top Team",
-        "city": "Nogales",
-        "country": "Mexico",
-    },
-    {
-        "id": "diego-martinez",
-        "canonical_name": "Diego Martínez",
-        "aliases": ["Diego Martinez", "D. Martinez"],
-        "tapology_slug": None,
-        "record": {"wins": 0, "losses": 0, "draws": 0, "nc": 0},
-        "weight_class": "Welterweight",
-        "gym": "Hermosillo Combat Club",
-        "city": "Hermosillo",
-        "country": "Mexico",
-        "notes": "Regional amateur turning pro.",
-    },
-    {
-        "id": "ana-lopez",
-        "canonical_name": "Ana López",
-        "aliases": ["Ana Lopez", "A. Lopez"],
-        "tapology_slug": "ana-lopez-71203",
-        "record": {"wins": 4, "losses": 0, "draws": 0, "nc": 0},
-        "weight_class": "Strawweight",
-        "gym": "Sonora Fight Team",
-        "city": "Hermosillo",
-        "country": "Mexico",
-    },
-    {
-        "id": "patricia-morales",
-        "canonical_name": "Patricia Morales",
-        "aliases": ["P. Morales", "Paty Morales"],
-        "tapology_slug": None,
-        "record": {"wins": 0, "losses": 0, "draws": 0, "nc": 0},
-        "weight_class": "Strawweight",
-        "gym": "Guaymas Fight Lab",
-        "city": "Guaymas",
-        "country": "Mexico",
-    },
-    {
-        "id": "ricardo-soto",
-        "canonical_name": "Ricardo Soto",
-        "aliases": ["R. Soto", "Ricky Soto"],
-        "tapology_slug": "ricardo-soto-33421",
-        "record": {"wins": 10, "losses": 4, "draws": 1, "nc": 0},
-        "weight_class": "Middleweight",
-        "gym": "Hermosillo Combat Club",
-        "city": "Hermosillo",
-        "country": "Mexico",
-    },
-    {
-        "id": "jorge-herrera",
-        "canonical_name": "Jorge Herrera",
-        "aliases": ["J. Herrera", "Jorge Herera"],
-        "tapology_slug": "jorge-herrera-29877",
-        "record": {"wins": 7, "losses": 5, "draws": 0, "nc": 0},
-        "weight_class": "Middleweight",
-        "gym": "Culiacán Fight House",
-        "city": "Navojoa",
-        "country": "Mexico",
-    },
+    # --- Main Card (PRO) ---
+    _f("lugo", "Lugo", aliases=["LUGO"], record={"wins": 6, "losses": 2, "draws": 0, "nc": 0}, weight_class="135 lb"),
+    _f("juan-garzon", "Juan Garzón", aliases=["Garzon", "Garzón", "GARZON", "GARZÓN"], record={"wins": 8, "losses": 2, "draws": 0, "nc": 0}, weight_class="135 lb", gym="Sonora Fight Team"),
+    _f("carrera", "Carrera", aliases=["CARRERA"], record={"wins": 5, "losses": 2, "draws": 0, "nc": 0}, weight_class="145 lb"),
+    _f("duarte", "Duarte", aliases=["DUARTE"], record={"wins": 4, "losses": 3, "draws": 0, "nc": 0}, weight_class="145 lb"),
+    _f("figueroa", "Figueroa", aliases=["FIGUEROA"], record={"wins": 7, "losses": 1, "draws": 0, "nc": 0}, weight_class="140 lb"),
+    _f("carlos-linebaugh", "Carlos Linebaugh", aliases=["Linebough", "LINEBOUGH", "Linebaugh"], record={"wins": 6, "losses": 3, "draws": 0, "nc": 0}, weight_class="140 lb", gym="Obregon MMA", city="Ciudad Obregón"),
+    _f("arroyo", "Arroyo", aliases=["ARROYO"], record={"wins": 5, "losses": 2, "draws": 0, "nc": 0}, weight_class="140 lb"),
+    _f("bailey", "Bailey", aliases=["BAILEY"], record={"wins": 4, "losses": 1, "draws": 0, "nc": 0}, weight_class="140 lb", city="Nogales"),
+    _f("gutierrez", "Gutiérrez", aliases=["Gutierrez", "GUTIERREZ", "GUTIÉRREZ"], record={"wins": 6, "losses": 1, "draws": 0, "nc": 0}, weight_class="125 lb"),
+    _f("borja", "Borja", aliases=["BORJA"], record={"wins": 3, "losses": 2, "draws": 0, "nc": 0}, weight_class="125 lb"),
+    # --- Preliminary Card (AMATEUR) ---
+    _f("morales", "Morales", aliases=["MORALES"], weight_class="150 lb", gym="Guaymas Fight Lab", city="Guaymas"),
+    _f("gonzalez", "González", aliases=["Gonzalez", "GONZÁLEZ", "GONZALEZ"], weight_class="135 lb"),
+    _f("lopez", "López", aliases=["Lopez", "LÓPEZ", "LOPEZ"], weight_class="135 lb", gym="Sonora Fight Team"),
+    _f("acuna", "Acuña", aliases=["Acuna", "ACUÑA", "ACUNA"], weight_class="135 lb"),
+    _f("pavon", "Pavón", aliases=["Pavon", "PAVÓN", "PAVON"], weight_class="135 lb"),
+    _f("navarrete", "Navarrete", aliases=["NAVARRETE"], weight_class="120 lb"),
+    _f("rodriguez", "Rodríguez", aliases=["Rodriguez", "RODRÍGUEZ", "RODRIGUEZ"], weight_class="120 lb"),
+    _f("sotelo", "Sotelo", aliases=["SOTELO"], weight_class="145 lb"),
+    _f("cordova", "Córdova", aliases=["Cordova", "CORDOVA"], weight_class="145 lb"),
+    _f("silva", "Silva", aliases=["SILVA"], weight_class="125 lb"),
+    _f("miguel-rosenthal", "Miguel Rosenthal", aliases=["Resenthal", "RESENTHAL", "Rosenthal"], weight_class="125 lb", city="Nogales"),
+    _f("canez", "Cáñez", aliases=["Canez", "CÁÑEZ", "CANEZ"], weight_class="145 lb"),
+    _f("baca", "Baca", aliases=["BACA"], weight_class="145 lb"),
+    _f("chavira", "Chavira", aliases=["CHAVIRA"], weight_class="145 lb"),
+    _f("escobar", "Escobar", aliases=["ESCOBAR"], weight_class="145 lb"),
 ]
 
 
 def get_fighter_database() -> list[FighterRecord]:
-    """Return the active fighter registry.
-
-    Returns:
-        List of fighter records. Swap this implementation later to load from
-        JSON, SQLite, or Supabase without touching enricher logic.
-    """
     return FIGHTER_DATABASE

@@ -121,6 +121,7 @@ def enrich_bout(
         "bout_number": bout.bout_number,
         "label": bout.label,
         "weight_class": bout.weight_class,
+        "level": bout.level,
         "is_title_fight": bout.is_title_fight,
         "notes": bout.notes,
         "red_corner": red,
@@ -185,6 +186,8 @@ def enrich_fight_card(
             "date": parsed.event_date,
             "promotion": parsed.promotion,
             "location": parsed.location,
+            "venue": parsed.venue,
+            "stream_url": parsed.stream_url,
         },
         "bouts": enriched_bouts,
         "metadata": {

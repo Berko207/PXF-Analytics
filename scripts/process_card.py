@@ -11,6 +11,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.enricher.enricher import enrich_fight_card  # noqa: E402
+from src.enricher.dashboard_export import to_dashboard_json  # noqa: E402
 from src.utils.json_io import write_json  # noqa: E402
 
 
@@ -50,6 +51,11 @@ def build_parser() -> argparse.ArgumentParser:
         default=82.0,
         help="Fuzzy match threshold 0-100 (default: 82)",
     )
+    parser.add_argument(
+        "--dashboard",
+        action="store_true",
+        help="Export dashboard-compatible JSON (for Next.js web app)",
+    )
     return parser
 
 
@@ -65,11 +71,20 @@ def main(argv: list[str] | None = None) -> int:
     card_text = input_path.read_text(encoding="utf-8")
     enriched = enrich_fight_card(card_text, match_threshold=args.threshold)
 
-    output_path = args.output or _default_output_path(input_path, args.output_dir)
-    write_json(enriched, output_path)
+    if args.dashboard:
+        payload = to_dashboard_json(
+            enriched,
+            venue=enriched["event"].get("venue"),
+            stream_url=enriched["event"].get("stream_url"),
+        )
+    else:
+        payload = enriched
 
-    meta = enriched["metadata"]
-    event = enriched["event"]
+    output_path = args.output or _default_output_path(input_path, args.output_dir)
+    write_json(payload, output_path)
+
+    meta = payload["metadata"]
+    event = payload["event"]
     print(f"Processed: {event['name']}")
     print(f"  Bouts:           {meta['total_bouts']}")
     print(f"  Matched fighters:{meta['matched_fighters']}")
