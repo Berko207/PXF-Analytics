@@ -1,0 +1,437 @@
+{
+  "event": {
+    "name": "PXF 50 — Sonora Showdown",
+    "date": "2025-08-15",
+    "promotion": "PXF",
+    "location": "Hermosillo, Sonora, Mexico",
+    "venue": "Centro de Usos Múltiples",
+    "stream_url": "https://www.youtube.com/@PXFMMA"
+  },
+  "bouts": [
+    {
+      "bout_number": 1,
+      "label": "Main Event",
+      "weight_class": "Lightweight",
+      "level": "PRO",
+      "is_title_fight": true,
+      "notes": "PXF Lightweight Championship",
+      "win_probability": { "red": 58, "blue": 42 },
+      "red_corner": {
+        "original_name": "Juan Garzon",
+        "display_name": "Juan Garzón",
+        "canonical_name": "Juan Garzón",
+        "fighter_id": "juan-garzon",
+        "is_matched": true,
+        "is_debut": false,
+        "match_score": 100,
+        "record": { "wins": 8, "losses": 2, "draws": 0, "nc": 0 },
+        "record_display": "8-2-0",
+        "weight_class": "Lightweight",
+        "gym": "Sonora Fight Team",
+        "city": "Hermosillo",
+        "country": "Mexico",
+        "tapology_url": "https://www.tapology.com/fightcenter/fighters/juan-garzon-48291",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Juan+Garz%C3%B3n",
+          "profile_url": "https://www.tapology.com/fightcenter/fighters/juan-garzon-48291"
+        },
+        "status": "matched"
+      },
+      "blue_corner": {
+        "original_name": "Carlos Linebough",
+        "display_name": "Carlos Linebaugh",
+        "canonical_name": "Carlos Linebaugh",
+        "fighter_id": "carlos-linebaugh",
+        "is_matched": true,
+        "is_debut": false,
+        "match_score": 100,
+        "record": { "wins": 6, "losses": 3, "draws": 0, "nc": 0 },
+        "record_display": "6-3-0",
+        "weight_class": "Lightweight",
+        "gym": "Obregon MMA",
+        "city": "Ciudad Obregón",
+        "country": "Mexico",
+        "tapology_url": "https://www.tapology.com/fightcenter/fighters/carlos-linebaugh-55102",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Carlos+Linebaugh",
+          "profile_url": "https://www.tapology.com/fightcenter/fighters/carlos-linebaugh-55102"
+        },
+        "status": "matched"
+      },
+      "summary": { "both_fighters_matched": true, "has_debut_fighter": false, "debut_fighters": [] }
+    },
+    {
+      "bout_number": 2,
+      "label": "Co-Main Event",
+      "weight_class": "Welterweight",
+      "level": "PRO",
+      "is_title_fight": false,
+      "notes": null,
+      "win_probability": { "red": 72, "blue": 28 },
+      "red_corner": {
+        "original_name": "Miguel Resenthal",
+        "display_name": "Miguel Rosenthal",
+        "canonical_name": "Miguel Rosenthal",
+        "fighter_id": "miguel-rosenthal",
+        "is_matched": true,
+        "is_debut": false,
+        "match_score": 100,
+        "record": { "wins": 5, "losses": 1, "draws": 0, "nc": 0 },
+        "record_display": "5-1-0",
+        "weight_class": "Welterweight",
+        "gym": "Tijuana Top Team",
+        "city": "Nogales",
+        "country": "Mexico",
+        "tapology_url": "https://www.tapology.com/fightcenter/fighters/miguel-rosenthal-60344",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Miguel+Rosenthal",
+          "profile_url": "https://www.tapology.com/fightcenter/fighters/miguel-rosenthal-60344"
+        },
+        "status": "matched"
+      },
+      "blue_corner": {
+        "original_name": "Diego Martinez (debut)",
+        "display_name": "Diego Martínez",
+        "canonical_name": "Diego Martínez",
+        "fighter_id": "diego-martinez",
+        "is_matched": true,
+        "is_debut": true,
+        "match_score": 100,
+        "record": { "wins": 0, "losses": 0, "draws": 0, "nc": 0 },
+        "record_display": "0-0-0",
+        "weight_class": "Welterweight",
+        "gym": "Hermosillo Combat Club",
+        "city": "Hermosillo",
+        "country": "Mexico",
+        "tapology_url": "https://www.tapology.com/search?term=Diego+Mart%C3%ADnez",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Diego+Mart%C3%ADnez",
+          "profile_url": null
+        },
+        "status": "debut"
+      },
+      "summary": { "both_fighters_matched": true, "has_debut_fighter": true, "debut_fighters": ["Diego Martínez"] }
+    },
+    {
+      "bout_number": 3,
+      "label": "Featured Bout",
+      "weight_class": "Strawweight",
+      "level": "PRO",
+      "is_title_fight": false,
+      "notes": null,
+      "win_probability": { "red": 65, "blue": 35 },
+      "red_corner": {
+        "original_name": "Ana Lopez",
+        "display_name": "Ana López",
+        "canonical_name": "Ana López",
+        "fighter_id": "ana-lopez",
+        "is_matched": true,
+        "is_debut": false,
+        "match_score": 100,
+        "record": { "wins": 4, "losses": 0, "draws": 0, "nc": 0 },
+        "record_display": "4-0-0",
+        "weight_class": "Strawweight",
+        "gym": "Sonora Fight Team",
+        "city": "Hermosillo",
+        "country": "Mexico",
+        "tapology_url": "https://www.tapology.com/fightcenter/fighters/ana-lopez-71203",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Ana+L%C3%B3pez",
+          "profile_url": "https://www.tapology.com/fightcenter/fighters/ana-lopez-71203"
+        },
+        "status": "matched"
+      },
+      "blue_corner": {
+        "original_name": "Patricia Morales (debut)",
+        "display_name": "Patricia Morales",
+        "canonical_name": "Patricia Morales",
+        "fighter_id": "patricia-morales",
+        "is_matched": true,
+        "is_debut": true,
+        "match_score": 100,
+        "record": { "wins": 0, "losses": 0, "draws": 0, "nc": 0 },
+        "record_display": "0-0-0",
+        "weight_class": "Strawweight",
+        "gym": "Guaymas Fight Lab",
+        "city": "Guaymas",
+        "country": "Mexico",
+        "tapology_url": "https://www.tapology.com/search?term=Patricia+Morales",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Patricia+Morales",
+          "profile_url": null
+        },
+        "status": "debut"
+      },
+      "summary": { "both_fighters_matched": true, "has_debut_fighter": true, "debut_fighters": ["Patricia Morales"] }
+    },
+    {
+      "bout_number": 4,
+      "label": "Middleweight Clash",
+      "weight_class": "Middleweight",
+      "level": "PRO",
+      "is_title_fight": false,
+      "notes": null,
+      "win_probability": { "red": 54, "blue": 46 },
+      "red_corner": {
+        "original_name": "Ricardo Soto",
+        "display_name": "Ricardo Soto",
+        "canonical_name": "Ricardo Soto",
+        "fighter_id": "ricardo-soto",
+        "is_matched": true,
+        "is_debut": false,
+        "match_score": 100,
+        "record": { "wins": 10, "losses": 4, "draws": 1, "nc": 0 },
+        "record_display": "10-4-1",
+        "weight_class": "Middleweight",
+        "gym": "Hermosillo Combat Club",
+        "city": "Hermosillo",
+        "country": "Mexico",
+        "tapology_url": "https://www.tapology.com/fightcenter/fighters/ricardo-soto-33421",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Ricardo+Soto",
+          "profile_url": "https://www.tapology.com/fightcenter/fighters/ricardo-soto-33421"
+        },
+        "status": "matched"
+      },
+      "blue_corner": {
+        "original_name": "Jorge Herera",
+        "display_name": "Jorge Herrera",
+        "canonical_name": "Jorge Herrera",
+        "fighter_id": "jorge-herrera",
+        "is_matched": true,
+        "is_debut": false,
+        "match_score": 96.5,
+        "record": { "wins": 7, "losses": 5, "draws": 0, "nc": 0 },
+        "record_display": "7-5-0",
+        "weight_class": "Middleweight",
+        "gym": "Culiacán Fight House",
+        "city": "Navojoa",
+        "country": "Mexico",
+        "tapology_url": "https://www.tapology.com/fightcenter/fighters/jorge-herrera-29877",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Jorge+Herrera",
+          "profile_url": "https://www.tapology.com/fightcenter/fighters/jorge-herrera-29877"
+        },
+        "status": "suggested"
+      },
+      "summary": { "both_fighters_matched": true, "has_debut_fighter": false, "debut_fighters": [] }
+    },
+    {
+      "bout_number": 5,
+      "label": "Bantamweight",
+      "weight_class": "Bantamweight",
+      "level": "PRO",
+      "is_title_fight": false,
+      "notes": null,
+      "win_probability": { "red": 48, "blue": 52 },
+      "red_corner": {
+        "original_name": "Luis Ramirez",
+        "display_name": "Luis Ramírez",
+        "canonical_name": "Luis Ramírez",
+        "fighter_id": "luis-ramirez",
+        "is_matched": true,
+        "is_debut": false,
+        "match_score": 100,
+        "record": { "wins": 3, "losses": 2, "draws": 0, "nc": 0 },
+        "record_display": "3-2-0",
+        "weight_class": "Bantamweight",
+        "gym": "Empire MMA Hermosillo",
+        "city": "Hermosillo",
+        "country": "Mexico",
+        "tapology_url": "https://www.tapology.com/search?term=Luis+Ram%C3%ADrez",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Luis+Ram%C3%ADrez",
+          "profile_url": null
+        },
+        "status": "matched"
+      },
+      "blue_corner": {
+        "original_name": "Marco Delgado",
+        "display_name": "Marco Delgado",
+        "canonical_name": "Marco Delgado",
+        "fighter_id": "marco-delgado",
+        "is_matched": true,
+        "is_debut": false,
+        "match_score": 100,
+        "record": { "wins": 4, "losses": 1, "draws": 0, "nc": 0 },
+        "record_display": "4-1-0",
+        "weight_class": "Bantamweight",
+        "gym": "Obregon MMA",
+        "city": "Ciudad Obregón",
+        "country": "Mexico",
+        "tapology_url": "https://www.tapology.com/search?term=Marco+Delgado",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Marco+Delgado",
+          "profile_url": null
+        },
+        "status": "matched"
+      },
+      "summary": { "both_fighters_matched": true, "has_debut_fighter": false, "debut_fighters": [] }
+    },
+    {
+      "bout_number": 6,
+      "label": "Amateur Showcase",
+      "weight_class": "Featherweight",
+      "level": "AMATEUR",
+      "is_title_fight": false,
+      "notes": "3 rounds",
+      "win_probability": { "red": 55, "blue": 45 },
+      "red_corner": {
+        "original_name": "Eduardo Nunez",
+        "display_name": "Eduardo Núñez",
+        "canonical_name": "Eduardo Núñez",
+        "fighter_id": "eduardo-nunez",
+        "is_matched": true,
+        "is_debut": false,
+        "match_score": 100,
+        "record": { "wins": 2, "losses": 0, "draws": 0, "nc": 0 },
+        "record_display": "2-0-0",
+        "weight_class": "Featherweight",
+        "gym": "Sonora Fight Team",
+        "city": "Hermosillo",
+        "country": "Mexico",
+        "tapology_url": "https://www.tapology.com/search?term=Eduardo+N%C3%BA%C3%B1ez",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Eduardo+N%C3%BA%C3%B1ez",
+          "profile_url": null
+        },
+        "status": "matched"
+      },
+      "blue_corner": {
+        "original_name": "Kevin Torres (debut)",
+        "display_name": "Kevin Torres",
+        "canonical_name": "Kevin Torres",
+        "fighter_id": "kevin-torres",
+        "is_matched": true,
+        "is_debut": true,
+        "match_score": 100,
+        "record": { "wins": 0, "losses": 0, "draws": 0, "nc": 0 },
+        "record_display": "0-0-0",
+        "weight_class": "Featherweight",
+        "gym": "Guaymas Fight Lab",
+        "city": "Guaymas",
+        "country": "Mexico",
+        "tapology_url": "https://www.tapology.com/search?term=Kevin+Torres",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Kevin+Torres",
+          "profile_url": null
+        },
+        "status": "debut"
+      },
+      "summary": { "both_fighters_matched": true, "has_debut_fighter": true, "debut_fighters": ["Kevin Torres"] }
+    },
+    {
+      "bout_number": 7,
+      "label": "Amateur Preliminary",
+      "weight_class": "Lightweight",
+      "level": "AMATEUR",
+      "is_title_fight": false,
+      "notes": null,
+      "win_probability": { "red": 50, "blue": 50 },
+      "red_corner": {
+        "original_name": "Angel Castro",
+        "display_name": "Ángel Castro",
+        "canonical_name": "Ángel Castro",
+        "fighter_id": "angel-castro",
+        "is_matched": true,
+        "is_debut": false,
+        "match_score": 100,
+        "record": { "wins": 1, "losses": 1, "draws": 0, "nc": 0 },
+        "record_display": "1-1-0",
+        "weight_class": "Lightweight",
+        "gym": "Empire MMA Hermosillo",
+        "city": "Hermosillo",
+        "country": "Mexico",
+        "tapology_url": "https://www.tapology.com/search?term=%C3%81ngel+Castro",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=%C3%81ngel+Castro",
+          "profile_url": null
+        },
+        "status": "matched"
+      },
+      "blue_corner": {
+        "original_name": "Saul Mendivil",
+        "display_name": "Saúl Mendivil",
+        "canonical_name": null,
+        "fighter_id": null,
+        "is_matched": false,
+        "is_debut": true,
+        "match_score": 74.2,
+        "record": null,
+        "record_display": null,
+        "weight_class": "Lightweight",
+        "gym": null,
+        "city": "Hermosillo",
+        "country": "Mexico",
+        "tapology_url": "https://www.tapology.com/search?term=Saul+Mendivil",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Saul+Mendivil",
+          "profile_url": null
+        },
+        "status": "suggested"
+      },
+      "summary": { "both_fighters_matched": false, "has_debut_fighter": true, "debut_fighters": ["Saúl Mendivil"] }
+    },
+    {
+      "bout_number": 8,
+      "label": "Opening Bout",
+      "weight_class": "Flyweight",
+      "level": "AMATEUR",
+      "is_title_fight": false,
+      "notes": null,
+      "win_probability": { "red": 61, "blue": 39 },
+      "red_corner": {
+        "original_name": "Daniela Ruiz",
+        "display_name": "Daniela Ruiz",
+        "canonical_name": "Daniela Ruiz",
+        "fighter_id": "daniela-ruiz",
+        "is_matched": true,
+        "is_debut": false,
+        "match_score": 100,
+        "record": { "wins": 2, "losses": 0, "draws": 0, "nc": 0 },
+        "record_display": "2-0-0",
+        "weight_class": "Flyweight",
+        "gym": "Sonora Fight Team",
+        "city": "Hermosillo",
+        "country": "Mexico",
+        "tapology_url": "https://www.tapology.com/search?term=Daniela+Ruiz",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Daniela+Ruiz",
+          "profile_url": null
+        },
+        "status": "matched"
+      },
+      "blue_corner": {
+        "original_name": "Valeria Soto (debut)",
+        "display_name": "Valeria Soto",
+        "canonical_name": "Valeria Soto",
+        "fighter_id": "valeria-soto",
+        "is_matched": true,
+        "is_debut": true,
+        "match_score": 100,
+        "record": { "wins": 0, "losses": 0, "draws": 0, "nc": 0 },
+        "record_display": "0-0-0",
+        "weight_class": "Flyweight",
+        "gym": "Hermosillo Combat Club",
+        "city": "Hermosillo",
+        "country": "Mexico",
+        "tapology_url": "https://www.tapology.com/search?term=Valeria+Soto",
+        "tapology": {
+          "search_url": "https://www.tapology.com/search?term=Valeria+Soto",
+          "profile_url": null
+        },
+        "status": "debut"
+      },
+      "summary": { "both_fighters_matched": true, "has_debut_fighter": true, "debut_fighters": ["Valeria Soto"] }
+    }
+  ],
+  "metadata": {
+    "processed_at": "2026-06-19T18:00:00.000000+00:00",
+    "version": "0.2.0",
+    "total_bouts": 8,
+    "matched_fighters": 14,
+    "debut_fighters": 5,
+    "unmatched_names": ["Saul Mendivil"],
+    "match_threshold": 82.0
+  }
+}
