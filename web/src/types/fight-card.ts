@@ -16,9 +16,18 @@ export interface TapologyLinks {
   profile_url: string | null;
 }
 
+export interface FighterProfiles {
+  tapology: string | null;
+  sherdog: string | null;
+}
+
 export interface Fighter {
   original_name: string;
   display_name: string;
+  full_name: string | null;
+  nickname: string | null;
+  tapology_search_term: string;
+  research_notes: string | null;
   canonical_name: string | null;
   fighter_id: string | null;
   is_matched: boolean;
@@ -32,6 +41,7 @@ export interface Fighter {
   country: string | null;
   tapology_url: string;
   tapology: TapologyLinks;
+  profiles: FighterProfiles;
   status: FighterStatus;
 }
 
