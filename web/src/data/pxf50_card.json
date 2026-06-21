@@ -21,7 +21,9 @@
       },
       "red_corner": {
         "original_name": "Lugo",
-        "display_name": "Lugo",
+        "display_name": "Daniel Lugo",
+        "full_name": "Daniel Lugo",
+        "tapology_search_term": "Daniel Lugo",
         "canonical_name": "Lugo",
         "fighter_id": "lugo",
         "is_matched": true,
@@ -38,9 +40,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Lugo",
+        "tapology_url": "https://www.tapology.com/search?term=Daniel+Lugo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Lugo",
+          "search_url": "https://www.tapology.com/search?term=Daniel+Lugo",
           "profile_url": null
         },
         "status": "matched"
@@ -48,6 +50,8 @@
       "blue_corner": {
         "original_name": "Garzon",
         "display_name": "Juan Garzón",
+        "full_name": null,
+        "tapology_search_term": "Juan Garzón",
         "canonical_name": "Juan Garzón",
         "fighter_id": "juan-garzon",
         "is_matched": true,
@@ -91,6 +95,8 @@
       "red_corner": {
         "original_name": "Carrera",
         "display_name": "Carrera",
+        "full_name": null,
+        "tapology_search_term": "Carrera Hermosillo",
         "canonical_name": "Carrera",
         "fighter_id": "carrera",
         "is_matched": true,
@@ -107,16 +113,18 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Carrera",
+        "tapology_url": "https://www.tapology.com/search?term=Carrera+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Carrera",
+          "search_url": "https://www.tapology.com/search?term=Carrera+Hermosillo",
           "profile_url": null
         },
         "status": "matched"
       },
       "blue_corner": {
         "original_name": "Duarte",
-        "display_name": "Duarte",
+        "display_name": "Humberto Duarte",
+        "full_name": "Humberto Duarte",
+        "tapology_search_term": "Humberto Duarte",
         "canonical_name": "Duarte",
         "fighter_id": "duarte",
         "is_matched": true,
@@ -133,9 +141,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Duarte",
+        "tapology_url": "https://www.tapology.com/search?term=Humberto+Duarte",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Duarte",
+          "search_url": "https://www.tapology.com/search?term=Humberto+Duarte",
           "profile_url": null
         },
         "status": "matched"
@@ -160,6 +168,8 @@
       "red_corner": {
         "original_name": "Figueroa",
         "display_name": "Figueroa",
+        "full_name": null,
+        "tapology_search_term": "Figueroa Hermosillo",
         "canonical_name": "Figueroa",
         "fighter_id": "figueroa",
         "is_matched": true,
@@ -176,9 +186,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Figueroa",
+        "tapology_url": "https://www.tapology.com/search?term=Figueroa+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Figueroa",
+          "search_url": "https://www.tapology.com/search?term=Figueroa+Hermosillo",
           "profile_url": null
         },
         "status": "matched"
@@ -186,6 +196,8 @@
       "blue_corner": {
         "original_name": "Linebough",
         "display_name": "Carlos Linebaugh",
+        "full_name": null,
+        "tapology_search_term": "Carlos Linebaugh",
         "canonical_name": "Carlos Linebaugh",
         "fighter_id": "carlos-linebaugh",
         "is_matched": true,
@@ -229,6 +241,8 @@
       "red_corner": {
         "original_name": "Arroyo",
         "display_name": "Arroyo",
+        "full_name": null,
+        "tapology_search_term": "Arroyo Hermosillo",
         "canonical_name": "Arroyo",
         "fighter_id": "arroyo",
         "is_matched": true,
@@ -245,9 +259,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Arroyo",
+        "tapology_url": "https://www.tapology.com/search?term=Arroyo+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Arroyo",
+          "search_url": "https://www.tapology.com/search?term=Arroyo+Hermosillo",
           "profile_url": null
         },
         "status": "matched"
@@ -255,6 +269,8 @@
       "blue_corner": {
         "original_name": "Bailey",
         "display_name": "Bailey",
+        "full_name": null,
+        "tapology_search_term": "Bailey Nogales",
         "canonical_name": "Bailey",
         "fighter_id": "bailey",
         "is_matched": true,
@@ -271,9 +287,9 @@
         "gym": null,
         "city": "Nogales",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Bailey",
+        "tapology_url": "https://www.tapology.com/search?term=Bailey+Nogales",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Bailey",
+          "search_url": "https://www.tapology.com/search?term=Bailey+Nogales",
           "profile_url": null
         },
         "status": "matched"
@@ -298,6 +314,8 @@
       "red_corner": {
         "original_name": "Gutierrez",
         "display_name": "Gutiérrez",
+        "full_name": null,
+        "tapology_search_term": "Gutiérrez Hermosillo",
         "canonical_name": "Gutiérrez",
         "fighter_id": "gutierrez",
         "is_matched": true,
@@ -314,9 +332,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Guti%C3%A9rrez",
+        "tapology_url": "https://www.tapology.com/search?term=Guti%C3%A9rrez+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Guti%C3%A9rrez",
+          "search_url": "https://www.tapology.com/search?term=Guti%C3%A9rrez+Hermosillo",
           "profile_url": null
         },
         "status": "matched"
@@ -324,6 +342,8 @@
       "blue_corner": {
         "original_name": "Borja",
         "display_name": "Borja",
+        "full_name": null,
+        "tapology_search_term": "Borja Hermosillo",
         "canonical_name": "Borja",
         "fighter_id": "borja",
         "is_matched": true,
@@ -340,9 +360,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Borja",
+        "tapology_url": "https://www.tapology.com/search?term=Borja+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Borja",
+          "search_url": "https://www.tapology.com/search?term=Borja+Hermosillo",
           "profile_url": null
         },
         "status": "matched"
@@ -367,6 +387,8 @@
       "red_corner": {
         "original_name": "Morales",
         "display_name": "Morales",
+        "full_name": null,
+        "tapology_search_term": "Morales Guaymas",
         "canonical_name": "Morales",
         "fighter_id": "morales",
         "is_matched": true,
@@ -383,9 +405,9 @@
         "gym": "Guaymas Fight Lab",
         "city": "Guaymas",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Morales",
+        "tapology_url": "https://www.tapology.com/search?term=Morales+Guaymas",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Morales",
+          "search_url": "https://www.tapology.com/search?term=Morales+Guaymas",
           "profile_url": null
         },
         "status": "debut"
@@ -393,6 +415,8 @@
       "blue_corner": {
         "original_name": "Gonzalez",
         "display_name": "González",
+        "full_name": null,
+        "tapology_search_term": "González Hermosillo",
         "canonical_name": "González",
         "fighter_id": "gonzalez",
         "is_matched": true,
@@ -409,9 +433,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Gonz%C3%A1lez",
+        "tapology_url": "https://www.tapology.com/search?term=Gonz%C3%A1lez+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Gonz%C3%A1lez",
+          "search_url": "https://www.tapology.com/search?term=Gonz%C3%A1lez+Hermosillo",
           "profile_url": null
         },
         "status": "debut"
@@ -439,6 +463,8 @@
       "red_corner": {
         "original_name": "Gonzalez",
         "display_name": "González",
+        "full_name": null,
+        "tapology_search_term": "González Hermosillo",
         "canonical_name": "González",
         "fighter_id": "gonzalez",
         "is_matched": true,
@@ -455,9 +481,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Gonz%C3%A1lez",
+        "tapology_url": "https://www.tapology.com/search?term=Gonz%C3%A1lez+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Gonz%C3%A1lez",
+          "search_url": "https://www.tapology.com/search?term=Gonz%C3%A1lez+Hermosillo",
           "profile_url": null
         },
         "status": "debut"
@@ -465,6 +491,8 @@
       "blue_corner": {
         "original_name": "Lopez",
         "display_name": "López",
+        "full_name": null,
+        "tapology_search_term": "López Hermosillo",
         "canonical_name": "López",
         "fighter_id": "lopez",
         "is_matched": true,
@@ -481,9 +509,9 @@
         "gym": "Sonora Fight Team",
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=L%C3%B3pez",
+        "tapology_url": "https://www.tapology.com/search?term=L%C3%B3pez+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=L%C3%B3pez",
+          "search_url": "https://www.tapology.com/search?term=L%C3%B3pez+Hermosillo",
           "profile_url": null
         },
         "status": "debut"
@@ -511,6 +539,8 @@
       "red_corner": {
         "original_name": "Acuna",
         "display_name": "Acuña",
+        "full_name": null,
+        "tapology_search_term": "Acuña Hermosillo",
         "canonical_name": "Acuña",
         "fighter_id": "acuna",
         "is_matched": true,
@@ -527,9 +557,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Acu%C3%B1a",
+        "tapology_url": "https://www.tapology.com/search?term=Acu%C3%B1a+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Acu%C3%B1a",
+          "search_url": "https://www.tapology.com/search?term=Acu%C3%B1a+Hermosillo",
           "profile_url": null
         },
         "status": "debut"
@@ -537,6 +567,8 @@
       "blue_corner": {
         "original_name": "Pavon",
         "display_name": "Pavón",
+        "full_name": null,
+        "tapology_search_term": "Pavón Hermosillo",
         "canonical_name": "Pavón",
         "fighter_id": "pavon",
         "is_matched": true,
@@ -553,9 +585,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Pav%C3%B3n",
+        "tapology_url": "https://www.tapology.com/search?term=Pav%C3%B3n+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Pav%C3%B3n",
+          "search_url": "https://www.tapology.com/search?term=Pav%C3%B3n+Hermosillo",
           "profile_url": null
         },
         "status": "debut"
@@ -583,6 +615,8 @@
       "red_corner": {
         "original_name": "Navarrete",
         "display_name": "Navarrete",
+        "full_name": null,
+        "tapology_search_term": "Navarrete Hermosillo",
         "canonical_name": "Navarrete",
         "fighter_id": "navarrete",
         "is_matched": true,
@@ -599,9 +633,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Navarrete",
+        "tapology_url": "https://www.tapology.com/search?term=Navarrete+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Navarrete",
+          "search_url": "https://www.tapology.com/search?term=Navarrete+Hermosillo",
           "profile_url": null
         },
         "status": "debut"
@@ -609,6 +643,8 @@
       "blue_corner": {
         "original_name": "Rodriguez",
         "display_name": "Rodríguez",
+        "full_name": null,
+        "tapology_search_term": "Rodríguez Hermosillo",
         "canonical_name": "Rodríguez",
         "fighter_id": "rodriguez",
         "is_matched": true,
@@ -625,9 +661,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Rodr%C3%ADguez",
+        "tapology_url": "https://www.tapology.com/search?term=Rodr%C3%ADguez+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Rodr%C3%ADguez",
+          "search_url": "https://www.tapology.com/search?term=Rodr%C3%ADguez+Hermosillo",
           "profile_url": null
         },
         "status": "debut"
@@ -655,6 +691,8 @@
       "red_corner": {
         "original_name": "Sotelo",
         "display_name": "Sotelo",
+        "full_name": null,
+        "tapology_search_term": "Sotelo Hermosillo",
         "canonical_name": "Sotelo",
         "fighter_id": "sotelo",
         "is_matched": true,
@@ -671,9 +709,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Sotelo",
+        "tapology_url": "https://www.tapology.com/search?term=Sotelo+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Sotelo",
+          "search_url": "https://www.tapology.com/search?term=Sotelo+Hermosillo",
           "profile_url": null
         },
         "status": "debut"
@@ -681,6 +719,8 @@
       "blue_corner": {
         "original_name": "Cordova",
         "display_name": "Córdova",
+        "full_name": null,
+        "tapology_search_term": "Córdova Hermosillo",
         "canonical_name": "Córdova",
         "fighter_id": "cordova",
         "is_matched": true,
@@ -697,9 +737,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=C%C3%B3rdova",
+        "tapology_url": "https://www.tapology.com/search?term=C%C3%B3rdova+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=C%C3%B3rdova",
+          "search_url": "https://www.tapology.com/search?term=C%C3%B3rdova+Hermosillo",
           "profile_url": null
         },
         "status": "debut"
@@ -727,6 +767,8 @@
       "red_corner": {
         "original_name": "Silva",
         "display_name": "Silva",
+        "full_name": null,
+        "tapology_search_term": "Silva Hermosillo",
         "canonical_name": "Silva",
         "fighter_id": "silva",
         "is_matched": true,
@@ -743,9 +785,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Silva",
+        "tapology_url": "https://www.tapology.com/search?term=Silva+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Silva",
+          "search_url": "https://www.tapology.com/search?term=Silva+Hermosillo",
           "profile_url": null
         },
         "status": "debut"
@@ -753,6 +795,8 @@
       "blue_corner": {
         "original_name": "Resenthal",
         "display_name": "Miguel Rosenthal",
+        "full_name": null,
+        "tapology_search_term": "Miguel Rosenthal",
         "canonical_name": "Miguel Rosenthal",
         "fighter_id": "miguel-rosenthal",
         "is_matched": true,
@@ -799,6 +843,8 @@
       "red_corner": {
         "original_name": "Canez",
         "display_name": "Cáñez",
+        "full_name": null,
+        "tapology_search_term": "Cáñez Hermosillo",
         "canonical_name": "Cáñez",
         "fighter_id": "canez",
         "is_matched": true,
@@ -815,9 +861,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=C%C3%A1%C3%B1ez",
+        "tapology_url": "https://www.tapology.com/search?term=C%C3%A1%C3%B1ez+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=C%C3%A1%C3%B1ez",
+          "search_url": "https://www.tapology.com/search?term=C%C3%A1%C3%B1ez+Hermosillo",
           "profile_url": null
         },
         "status": "debut"
@@ -825,6 +871,8 @@
       "blue_corner": {
         "original_name": "Baca",
         "display_name": "Baca",
+        "full_name": null,
+        "tapology_search_term": "Baca Hermosillo",
         "canonical_name": "Baca",
         "fighter_id": "baca",
         "is_matched": true,
@@ -841,9 +889,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Baca",
+        "tapology_url": "https://www.tapology.com/search?term=Baca+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Baca",
+          "search_url": "https://www.tapology.com/search?term=Baca+Hermosillo",
           "profile_url": null
         },
         "status": "debut"
@@ -871,6 +919,8 @@
       "red_corner": {
         "original_name": "Chavira",
         "display_name": "Chavira",
+        "full_name": null,
+        "tapology_search_term": "Chavira Hermosillo",
         "canonical_name": "Chavira",
         "fighter_id": "chavira",
         "is_matched": true,
@@ -887,9 +937,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Chavira",
+        "tapology_url": "https://www.tapology.com/search?term=Chavira+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Chavira",
+          "search_url": "https://www.tapology.com/search?term=Chavira+Hermosillo",
           "profile_url": null
         },
         "status": "debut"
@@ -897,6 +947,8 @@
       "blue_corner": {
         "original_name": "Escobar",
         "display_name": "Escobar",
+        "full_name": null,
+        "tapology_search_term": "Escobar Hermosillo",
         "canonical_name": "Escobar",
         "fighter_id": "escobar",
         "is_matched": true,
@@ -913,9 +965,9 @@
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Escobar",
+        "tapology_url": "https://www.tapology.com/search?term=Escobar+Hermosillo",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Escobar",
+          "search_url": "https://www.tapology.com/search?term=Escobar+Hermosillo",
           "profile_url": null
         },
         "status": "debut"
@@ -931,7 +983,7 @@
     }
   ],
   "metadata": {
-    "processed_at": "2026-06-20T04:26:10.669415+00:00",
+    "processed_at": "2026-06-21T06:17:36.623937+00:00",
     "version": "0.3.0",
     "total_bouts": 13,
     "matched_fighters": 26,

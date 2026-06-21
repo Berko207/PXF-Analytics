@@ -1,3 +1,4 @@
+import { getFighterDisplayName } from "@/lib/format";
 import type { Bout, Fighter } from "@/types/fight-card";
 
 interface HeadToHeadComparisonProps {
@@ -56,7 +57,7 @@ export function HeadToHeadComparison({ bout, selectedFighter }: HeadToHeadCompar
         </p>
         <p className="mt-1 text-sm text-muted-foreground">
           Bout #{bout.bout_number} · {bout.weight_class}
-          {selectedFighter ? ` · Viewing ${selectedFighter.display_name}` : ""}
+          {selectedFighter ? ` · Viewing ${getFighterDisplayName(selectedFighter)}` : ""}
         </p>
       </div>
 
@@ -66,20 +67,20 @@ export function HeadToHeadComparison({ bout, selectedFighter }: HeadToHeadCompar
             <p className="text-[10px] uppercase text-red-400">Red</p>
             <p
               className={`font-semibold ${
-                selectedFighter?.display_name === red.display_name ? "text-red-400" : ""
+                selectedFighter?.fighter_id === red.fighter_id ? "text-red-400" : ""
               }`}
             >
-              {red.display_name}
+              {getFighterDisplayName(red)}
             </p>
           </div>
           <div>
             <p className="text-[10px] uppercase text-blue-400">Blue</p>
             <p
               className={`font-semibold ${
-                selectedFighter?.display_name === blue.display_name ? "text-blue-400" : ""
+                selectedFighter?.fighter_id === blue.fighter_id ? "text-blue-400" : ""
               }`}
             >
-              {blue.display_name}
+              {getFighterDisplayName(blue)}
             </p>
           </div>
         </div>

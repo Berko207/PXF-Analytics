@@ -4,7 +4,7 @@ import { FighterStatusBadge } from "@/components/fight-card/fighter-status-badge
 import { LevelBadge } from "@/components/fight-card/level-badge";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { getTapologyHref } from "@/lib/format";
+import { getFighterDisplayName, getTapologyHref, getTapologySearchTerm } from "@/lib/format";
 import type { Bout, Fighter } from "@/types/fight-card";
 import { ExternalLink } from "lucide-react";
 
@@ -31,8 +31,10 @@ function FighterRow({ fighter, corner, onSelect }: FighterRowProps) {
           <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
             {corner} corner
           </p>
-          <p className="mt-0.5 font-semibold group-hover:text-primary">{fighter.display_name}</p>
-          {fighter.original_name !== fighter.display_name ? (
+          <p className="mt-0.5 font-semibold group-hover:text-primary">
+            {getFighterDisplayName(fighter)}
+          </p>
+          {fighter.original_name !== getFighterDisplayName(fighter) ? (
             <p className="text-xs text-muted-foreground">Card: {fighter.original_name}</p>
           ) : null}
         </div>
@@ -50,10 +52,16 @@ function FighterRow({ fighter, corner, onSelect }: FighterRowProps) {
         target="_blank"
         rel="noopener noreferrer"
         onClick={(event) => event.stopPropagation()}
-        className="mt-2 inline-flex items-center gap-1 text-xs text-blue-400 hover:underline"
+        className="mt-2 inline-flex flex-col items-start gap-0.5 text-xs text-blue-400 hover:underline"
+        title={`Search Tapology for ${getTapologySearchTerm(fighter)}`}
       >
-        Tapology
-        <ExternalLink className="size-3" />
+        <span className="inline-flex items-center gap-1">
+          Tapology
+          <ExternalLink className="size-3" />
+        </span>
+        <span className="font-normal text-muted-foreground">
+          Search: {getTapologySearchTerm(fighter)}
+        </span>
       </a>
     </button>
   );

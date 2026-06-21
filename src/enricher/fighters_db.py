@@ -8,6 +8,7 @@ from typing import TypedDict
 class FighterRecord(TypedDict, total=False):
     id: str
     canonical_name: str
+    full_name: str | None
     aliases: list[str]
     tapology_slug: str | None
     record: dict[str, int]
@@ -22,6 +23,7 @@ def _f(
     id: str,
     name: str,
     *,
+    full_name: str | None = None,
     aliases: list[str] | None = None,
     record: dict[str, int] | None = None,
     weight_class: str | None = None,
@@ -32,6 +34,7 @@ def _f(
     return {
         "id": id,
         "canonical_name": name,
+        "full_name": full_name,
         "aliases": aliases or [],
         "tapology_slug": slug,
         "record": record or {"wins": 0, "losses": 0, "draws": 0, "nc": 0},
@@ -45,10 +48,10 @@ def _f(
 # PXF 50 official poster roster (July 4 · Arena Sonora)
 FIGHTER_DATABASE: list[FighterRecord] = [
     # --- Main Card (PRO) ---
-    _f("lugo", "Lugo", aliases=["LUGO"], record={"wins": 6, "losses": 2, "draws": 0, "nc": 0}, weight_class="135 lb"),
+    _f("lugo", "Lugo", full_name="Daniel Lugo", aliases=["LUGO", "Daniel Lugo"], record={"wins": 6, "losses": 2, "draws": 0, "nc": 0}, weight_class="135 lb"),
     _f("juan-garzon", "Juan Garzón", aliases=["Garzon", "Garzón", "GARZON", "GARZÓN"], record={"wins": 8, "losses": 2, "draws": 0, "nc": 0}, weight_class="135 lb", gym="Sonora Fight Team"),
     _f("carrera", "Carrera", aliases=["CARRERA"], record={"wins": 5, "losses": 2, "draws": 0, "nc": 0}, weight_class="145 lb"),
-    _f("duarte", "Duarte", aliases=["DUARTE"], record={"wins": 4, "losses": 3, "draws": 0, "nc": 0}, weight_class="145 lb"),
+    _f("duarte", "Duarte", full_name="Humberto Duarte", aliases=["DUARTE", "Humberto Duarte"], record={"wins": 4, "losses": 3, "draws": 0, "nc": 0}, weight_class="145 lb"),
     _f("figueroa", "Figueroa", aliases=["FIGUEROA"], record={"wins": 7, "losses": 1, "draws": 0, "nc": 0}, weight_class="140 lb"),
     _f("carlos-linebaugh", "Carlos Linebaugh", aliases=["Linebough", "LINEBOUGH", "Linebaugh"], record={"wins": 6, "losses": 3, "draws": 0, "nc": 0}, weight_class="140 lb", gym="Obregon MMA", city="Ciudad Obregón"),
     _f("arroyo", "Arroyo", aliases=["ARROYO"], record={"wins": 5, "losses": 2, "draws": 0, "nc": 0}, weight_class="140 lb"),

@@ -11,7 +11,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { getTapologyHref } from "@/lib/format";
+import { getFighterDisplayName, getTapologyHref } from "@/lib/format";
 import type { Bout, Fighter } from "@/types/fight-card";
 import { ExternalLink } from "lucide-react";
 
@@ -35,7 +35,10 @@ function FighterCell({
       onClick={() => onSelect?.(fighter, bout)}
       className="group w-full text-left"
     >
-      <p className="font-medium group-hover:text-primary">{fighter.display_name}</p>
+      <p className="font-medium group-hover:text-primary">{getFighterDisplayName(fighter)}</p>
+      {fighter.original_name !== getFighterDisplayName(fighter) ? (
+        <p className="text-xs text-muted-foreground">Card: {fighter.original_name}</p>
+      ) : null}
       <div className="mt-1 flex flex-wrap items-center gap-1.5">
         <FighterStatusBadge status={fighter.status} />
         <span className="font-mono text-xs text-muted-foreground">

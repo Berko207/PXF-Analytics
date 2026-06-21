@@ -19,6 +19,8 @@ export interface TapologyLinks {
 export interface Fighter {
   original_name: string;
   display_name: string;
+  full_name: string | null;
+  tapology_search_term: string;
   canonical_name: string | null;
   fighter_id: string | null;
   is_matched: boolean;

@@ -52,6 +52,8 @@ def _export_fighter(fighter: dict[str, Any]) -> dict[str, Any]:
     return {
         "original_name": fighter["input_name"],
         "display_name": fighter["display_name"],
+        "full_name": fighter.get("full_name"),
+        "tapology_search_term": fighter.get("tapology_search_term", fighter["display_name"]),
         "canonical_name": fighter.get("canonical_name"),
         "fighter_id": fighter.get("fighter_id"),
         "is_matched": fighter.get("is_matched", False),

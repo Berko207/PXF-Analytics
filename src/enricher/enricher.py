@@ -12,6 +12,16 @@ from src.utils.normalize import strip_debut_marker
 from src.utils.tapology import build_fighter_url, build_search_url
 
 
+def _tapology_search_name(registry: FighterRecord | None, display_name: str) -> str:
+    """Build a Tapology-friendly search term (full name + city when needed)."""
+    search_name = (registry.get("full_name") if registry else None) or display_name
+    if registry and " " not in search_name.strip():
+        city = registry.get("city")
+        if city:
+            search_name = f"{search_name} {city}"
+    return search_name
+
+
 def _format_record(record: dict[str, int] | None) -> str | None:
     """Format wins-losses-draws record string."""
     if not record:
@@ -51,7 +61,7 @@ def enrich_fighter(
     registry: FighterRecord | None = match.fighter
 
     if registry:
-        display_name = registry["canonical_name"]
+        display_name = registry.get("full_name") or registry["canonical_name"]
 
     total_fights = 0
     if registry and registry.get("record"):
@@ -63,12 +73,15 @@ def enrich_fighter(
 
     tapology_slug = registry.get("tapology_slug") if registry else None
     tapology_profile = build_fighter_url(tapology_slug)
-    tapology_search = build_search_url(display_name)
+    tapology_search_term = _tapology_search_name(registry, display_name)
+    tapology_search = build_search_url(tapology_search_term)
 
     return {
         "input_name": raw_name.strip(),
         "display_name": display_name,
+        "full_name": registry.get("full_name") if registry else None,
         "canonical_name": registry["canonical_name"] if registry else None,
+        "tapology_search_term": tapology_search_term,
         "fighter_id": registry["id"] if registry else None,
         "is_matched": is_matched,
         "is_debut": is_debut,
