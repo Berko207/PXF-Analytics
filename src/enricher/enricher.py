@@ -9,6 +9,7 @@ from src.enricher.card_parser import RawBout, RawCorner, RawFightCard, parse_fig
 from src.enricher.fighters_db import FighterRecord
 from src.enricher.name_matcher import MatchResult, NameMatcher
 from src.utils.normalize import strip_debut_marker
+from src.utils.sherdog import build_fighter_url as build_sherdog_url
 from src.utils.tapology import build_fighter_url, build_search_url
 
 
@@ -73,6 +74,8 @@ def enrich_fighter(
 
     tapology_slug = registry.get("tapology_slug") if registry else None
     tapology_profile = build_fighter_url(tapology_slug)
+    sherdog_slug = registry.get("sherdog_slug") if registry else None
+    sherdog_profile = build_sherdog_url(sherdog_slug)
     tapology_search_term = _tapology_search_name(registry, display_name)
     tapology_search = build_search_url(tapology_search_term)
 
@@ -80,8 +83,10 @@ def enrich_fighter(
         "input_name": raw_name.strip(),
         "display_name": display_name,
         "full_name": registry.get("full_name") if registry else None,
+        "nickname": registry.get("nickname") if registry else None,
         "canonical_name": registry["canonical_name"] if registry else None,
         "tapology_search_term": tapology_search_term,
+        "research_notes": registry.get("notes") if registry else None,
         "fighter_id": registry["id"] if registry else None,
         "is_matched": is_matched,
         "is_debut": is_debut,
@@ -95,6 +100,10 @@ def enrich_fighter(
         "tapology": {
             "search_url": tapology_search,
             "profile_url": tapology_profile,
+        },
+        "profiles": {
+            "tapology": tapology_profile or tapology_search,
+            "sherdog": sherdog_profile,
         },
         "status": "matched" if is_matched else "unmatched",
     }

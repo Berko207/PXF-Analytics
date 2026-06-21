@@ -16,62 +16,74 @@
       "is_title_fight": false,
       "notes": null,
       "win_probability": {
-        "red": 46,
-        "blue": 54
+        "red": 75,
+        "blue": 25
       },
       "red_corner": {
         "original_name": "Lugo",
-        "display_name": "Daniel Lugo",
-        "full_name": "Daniel Lugo",
-        "tapology_search_term": "Daniel Lugo",
+        "display_name": "Daniel Vicente Lugo Valdez",
+        "full_name": "Daniel Vicente Lugo Valdez",
+        "nickname": "Super",
+        "tapology_search_term": "Daniel Vicente Lugo Valdez",
+        "research_notes": "Sherdog pro record verified through PXF 49 (Mar 2026).",
         "canonical_name": "Lugo",
         "fighter_id": "lugo",
         "is_matched": true,
         "is_debut": false,
         "match_score": 100.0,
         "record": {
-          "wins": 6,
+          "wins": 3,
           "losses": 2,
           "draws": 0,
           "nc": 0
         },
-        "record_display": "6-2-0",
+        "record_display": "3-2-0",
         "weight_class": "135 lb",
-        "gym": null,
-        "city": "Hermosillo",
+        "gym": "Team Cuates Paez",
+        "city": "Agua Prieta",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Daniel+Lugo",
+        "tapology_url": "https://www.tapology.com/search?term=Daniel+Vicente+Lugo+Valdez",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Daniel+Lugo",
+          "search_url": "https://www.tapology.com/search?term=Daniel+Vicente+Lugo+Valdez",
           "profile_url": null
+        },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Daniel+Vicente+Lugo+Valdez",
+          "sherdog": "https://www.sherdog.com/fighter/Daniel-Lugo-317851"
         },
         "status": "matched"
       },
       "blue_corner": {
         "original_name": "Garzon",
-        "display_name": "Juan Garzón",
-        "full_name": null,
-        "tapology_search_term": "Juan Garzón",
-        "canonical_name": "Juan Garzón",
+        "display_name": "Alex Garzon Gutierrez",
+        "full_name": "Alex Garzon Gutierrez",
+        "nickname": null,
+        "tapology_search_term": "Alex Garzon Gutierrez",
+        "research_notes": "PXF/Nogales regional bantamweight; defeated Kevin Rosales at PXF 48. Verify vs poster.",
+        "canonical_name": "Garzón",
         "fighter_id": "juan-garzon",
         "is_matched": true,
         "is_debut": false,
         "match_score": 100.0,
         "record": {
-          "wins": 8,
-          "losses": 2,
+          "wins": 1,
+          "losses": 5,
           "draws": 0,
           "nc": 0
         },
-        "record_display": "8-2-0",
+        "record_display": "1-5-0",
         "weight_class": "135 lb",
-        "gym": "Sonora Fight Team",
-        "city": "Hermosillo",
+        "gym": "Spartan Warriors Cabo San Lucas",
+        "city": "La Paz",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Juan+Garz%C3%B3n",
+        "tapology_url": "https://www.tapology.com/fightcenter/fighters/342124-alex-garzon-gutierrez",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Juan+Garz%C3%B3n",
-          "profile_url": null
+          "search_url": "https://www.tapology.com/search?term=Alex+Garzon+Gutierrez",
+          "profile_url": "https://www.tapology.com/fightcenter/fighters/342124-alex-garzon-gutierrez"
+        },
+        "profiles": {
+          "tapology": "https://www.tapology.com/fightcenter/fighters/342124-alex-garzon-gutierrez",
+          "sherdog": null
         },
         "status": "matched"
       },
@@ -89,14 +101,16 @@
       "is_title_fight": false,
       "notes": null,
       "win_probability": {
-        "red": 56,
-        "blue": 44
+        "red": 61,
+        "blue": 39
       },
       "red_corner": {
         "original_name": "Carrera",
         "display_name": "Carrera",
         "full_name": null,
+        "nickname": null,
         "tapology_search_term": "Carrera Hermosillo",
+        "research_notes": "No confirmed Tapology/Sherdog profile for this PXF 50 poster name yet.",
         "canonical_name": "Carrera",
         "fighter_id": "carrera",
         "is_matched": true,
@@ -118,33 +132,43 @@
           "search_url": "https://www.tapology.com/search?term=Carrera+Hermosillo",
           "profile_url": null
         },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Carrera+Hermosillo",
+          "sherdog": null
+        },
         "status": "matched"
       },
       "blue_corner": {
         "original_name": "Duarte",
         "display_name": "Humberto Duarte",
         "full_name": "Humberto Duarte",
+        "nickname": "Moso",
         "tapology_search_term": "Humberto Duarte",
+        "research_notes": "US-based bantamweight; frequent PXM/PXF competitor in Sonora.",
         "canonical_name": "Duarte",
         "fighter_id": "duarte",
         "is_matched": true,
         "is_debut": false,
         "match_score": 100.0,
         "record": {
-          "wins": 4,
-          "losses": 3,
+          "wins": 5,
+          "losses": 7,
           "draws": 0,
           "nc": 0
         },
-        "record_display": "4-3-0",
+        "record_display": "5-7-0",
         "weight_class": "145 lb",
-        "gym": null,
-        "city": "Hermosillo",
-        "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Humberto+Duarte",
+        "gym": "Apex MMA",
+        "city": "Tucson",
+        "country": "United States",
+        "tapology_url": "https://www.tapology.com/fightcenter/fighters/41498-humberto-duarte",
         "tapology": {
           "search_url": "https://www.tapology.com/search?term=Humberto+Duarte",
-          "profile_url": null
+          "profile_url": "https://www.tapology.com/fightcenter/fighters/41498-humberto-duarte"
+        },
+        "profiles": {
+          "tapology": "https://www.tapology.com/fightcenter/fighters/41498-humberto-duarte",
+          "sherdog": "https://www.sherdog.com/fighter/Humberto-Duarte-124399"
         },
         "status": "matched"
       },
@@ -162,43 +186,51 @@
       "is_title_fight": false,
       "notes": null,
       "win_probability": {
-        "red": 55,
-        "blue": 45
+        "red": 35,
+        "blue": 65
       },
       "red_corner": {
         "original_name": "Figueroa",
-        "display_name": "Figueroa",
-        "full_name": null,
-        "tapology_search_term": "Figueroa Hermosillo",
+        "display_name": "Manuel de Jesus Figueroa",
+        "full_name": "Manuel de Jesus Figueroa",
+        "nickname": "Bobby",
+        "tapology_search_term": "Manuel de Jesus Figueroa",
+        "research_notes": "Also known as La Bestia; 4-1 amateur record on Sherdog.",
         "canonical_name": "Figueroa",
         "fighter_id": "figueroa",
         "is_matched": true,
         "is_debut": false,
         "match_score": 100.0,
         "record": {
-          "wins": 7,
+          "wins": 0,
           "losses": 1,
           "draws": 0,
           "nc": 0
         },
-        "record_display": "7-1-0",
+        "record_display": "0-1-0",
         "weight_class": "140 lb",
-        "gym": null,
+        "gym": "Rival MMA",
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Figueroa+Hermosillo",
+        "tapology_url": "https://www.tapology.com/fightcenter/fighters/366790-manuel-figueroa",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Figueroa+Hermosillo",
-          "profile_url": null
+          "search_url": "https://www.tapology.com/search?term=Manuel+de+Jesus+Figueroa",
+          "profile_url": "https://www.tapology.com/fightcenter/fighters/366790-manuel-figueroa"
+        },
+        "profiles": {
+          "tapology": "https://www.tapology.com/fightcenter/fighters/366790-manuel-figueroa",
+          "sherdog": "https://www.sherdog.com/fighter/Manuel-Figueroa-417879"
         },
         "status": "matched"
       },
       "blue_corner": {
         "original_name": "Linebough",
         "display_name": "Carlos Linebaugh",
-        "full_name": null,
+        "full_name": "Carlos Linebaugh",
+        "nickname": null,
         "tapology_search_term": "Carlos Linebaugh",
-        "canonical_name": "Carlos Linebaugh",
+        "research_notes": "Poster spelling Linebough; no Sherdog/Tapology MMA profile confirmed.",
+        "canonical_name": "Linebaugh",
         "fighter_id": "carlos-linebaugh",
         "is_matched": true,
         "is_debut": false,
@@ -218,6 +250,10 @@
         "tapology": {
           "search_url": "https://www.tapology.com/search?term=Carlos+Linebaugh",
           "profile_url": null
+        },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Carlos+Linebaugh",
+          "sherdog": null
         },
         "status": "matched"
       },
@@ -242,7 +278,9 @@
         "original_name": "Arroyo",
         "display_name": "Arroyo",
         "full_name": null,
+        "nickname": null,
         "tapology_search_term": "Arroyo Hermosillo",
+        "research_notes": "No confirmed public MMA profile found.",
         "canonical_name": "Arroyo",
         "fighter_id": "arroyo",
         "is_matched": true,
@@ -264,13 +302,19 @@
           "search_url": "https://www.tapology.com/search?term=Arroyo+Hermosillo",
           "profile_url": null
         },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Arroyo+Hermosillo",
+          "sherdog": null
+        },
         "status": "matched"
       },
       "blue_corner": {
         "original_name": "Bailey",
         "display_name": "Bailey",
         "full_name": null,
+        "nickname": null,
         "tapology_search_term": "Bailey Nogales",
+        "research_notes": "No confirmed public MMA profile found for Nogales/Sonora.",
         "canonical_name": "Bailey",
         "fighter_id": "bailey",
         "is_matched": true,
@@ -291,6 +335,10 @@
         "tapology": {
           "search_url": "https://www.tapology.com/search?term=Bailey+Nogales",
           "profile_url": null
+        },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Bailey+Nogales",
+          "sherdog": null
         },
         "status": "matched"
       },
@@ -315,7 +363,9 @@
         "original_name": "Gutierrez",
         "display_name": "Gutiérrez",
         "full_name": null,
+        "nickname": null,
         "tapology_search_term": "Gutiérrez Hermosillo",
+        "research_notes": "Common surname; no confirmed PXF-linked profile yet.",
         "canonical_name": "Gutiérrez",
         "fighter_id": "gutierrez",
         "is_matched": true,
@@ -337,13 +387,19 @@
           "search_url": "https://www.tapology.com/search?term=Guti%C3%A9rrez+Hermosillo",
           "profile_url": null
         },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Guti%C3%A9rrez+Hermosillo",
+          "sherdog": null
+        },
         "status": "matched"
       },
       "blue_corner": {
         "original_name": "Borja",
         "display_name": "Borja",
         "full_name": null,
+        "nickname": null,
         "tapology_search_term": "Borja Hermosillo",
+        "research_notes": "No confirmed public MMA profile found.",
         "canonical_name": "Borja",
         "fighter_id": "borja",
         "is_matched": true,
@@ -365,6 +421,10 @@
           "search_url": "https://www.tapology.com/search?term=Borja+Hermosillo",
           "profile_url": null
         },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Borja+Hermosillo",
+          "sherdog": null
+        },
         "status": "matched"
       },
       "summary": {
@@ -381,42 +441,50 @@
       "is_title_fight": false,
       "notes": null,
       "win_probability": {
-        "red": 50,
-        "blue": 50
+        "red": 75,
+        "blue": 25
       },
       "red_corner": {
         "original_name": "Morales",
-        "display_name": "Morales",
-        "full_name": null,
-        "tapology_search_term": "Morales Guaymas",
+        "display_name": "Daniel Morales",
+        "full_name": "Daniel Morales",
+        "nickname": "Cirujano",
+        "tapology_search_term": "Daniel Morales",
+        "research_notes": "PXF 49 amateur winner vs Daniel Soto; also fought La Kampal Vol. 02.",
         "canonical_name": "Morales",
         "fighter_id": "morales",
         "is_matched": true,
-        "is_debut": true,
+        "is_debut": false,
         "match_score": 100.0,
         "record": {
-          "wins": 0,
+          "wins": 2,
           "losses": 0,
           "draws": 0,
           "nc": 0
         },
-        "record_display": "0-0-0",
+        "record_display": "2-0-0",
         "weight_class": "150 lb",
         "gym": "Guaymas Fight Lab",
         "city": "Guaymas",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Morales+Guaymas",
+        "tapology_url": "https://www.tapology.com/fightcenter/fighters/552561-daniel-morales",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Morales+Guaymas",
-          "profile_url": null
+          "search_url": "https://www.tapology.com/search?term=Daniel+Morales",
+          "profile_url": "https://www.tapology.com/fightcenter/fighters/552561-daniel-morales"
         },
-        "status": "debut"
+        "profiles": {
+          "tapology": "https://www.tapology.com/fightcenter/fighters/552561-daniel-morales",
+          "sherdog": "https://www.sherdog.com/fighter/Daniel-Morales-493347"
+        },
+        "status": "matched"
       },
       "blue_corner": {
         "original_name": "Gonzalez",
         "display_name": "González",
         "full_name": null,
+        "nickname": null,
         "tapology_search_term": "González Hermosillo",
+        "research_notes": "Two González entries on poster; profile not confirmed.",
         "canonical_name": "González",
         "fighter_id": "gonzalez",
         "is_matched": true,
@@ -438,13 +506,16 @@
           "search_url": "https://www.tapology.com/search?term=Gonz%C3%A1lez+Hermosillo",
           "profile_url": null
         },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Gonz%C3%A1lez+Hermosillo",
+          "sherdog": null
+        },
         "status": "debut"
       },
       "summary": {
         "both_fighters_matched": true,
         "has_debut_fighter": true,
         "debut_fighters": [
-          "Morales",
           "González"
         ]
       }
@@ -464,7 +535,9 @@
         "original_name": "Gonzalez",
         "display_name": "González",
         "full_name": null,
+        "nickname": null,
         "tapology_search_term": "González Hermosillo",
+        "research_notes": "Two González entries on poster; profile not confirmed.",
         "canonical_name": "González",
         "fighter_id": "gonzalez",
         "is_matched": true,
@@ -486,13 +559,19 @@
           "search_url": "https://www.tapology.com/search?term=Gonz%C3%A1lez+Hermosillo",
           "profile_url": null
         },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Gonz%C3%A1lez+Hermosillo",
+          "sherdog": null
+        },
         "status": "debut"
       },
       "blue_corner": {
         "original_name": "Lopez",
         "display_name": "López",
         "full_name": null,
+        "nickname": null,
         "tapology_search_term": "López Hermosillo",
+        "research_notes": "No confirmed public MMA profile found.",
         "canonical_name": "López",
         "fighter_id": "lopez",
         "is_matched": true,
@@ -513,6 +592,10 @@
         "tapology": {
           "search_url": "https://www.tapology.com/search?term=L%C3%B3pez+Hermosillo",
           "profile_url": null
+        },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=L%C3%B3pez+Hermosillo",
+          "sherdog": null
         },
         "status": "debut"
       },
@@ -540,7 +623,9 @@
         "original_name": "Acuna",
         "display_name": "Acuña",
         "full_name": null,
+        "nickname": null,
         "tapology_search_term": "Acuña Hermosillo",
+        "research_notes": "No confirmed public MMA profile found.",
         "canonical_name": "Acuña",
         "fighter_id": "acuna",
         "is_matched": true,
@@ -562,13 +647,19 @@
           "search_url": "https://www.tapology.com/search?term=Acu%C3%B1a+Hermosillo",
           "profile_url": null
         },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Acu%C3%B1a+Hermosillo",
+          "sherdog": null
+        },
         "status": "debut"
       },
       "blue_corner": {
         "original_name": "Pavon",
         "display_name": "Pavón",
         "full_name": null,
+        "nickname": null,
         "tapology_search_term": "Pavón Hermosillo",
+        "research_notes": "No confirmed public MMA profile found.",
         "canonical_name": "Pavón",
         "fighter_id": "pavon",
         "is_matched": true,
@@ -590,6 +681,10 @@
           "search_url": "https://www.tapology.com/search?term=Pav%C3%B3n+Hermosillo",
           "profile_url": null
         },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Pav%C3%B3n+Hermosillo",
+          "sherdog": null
+        },
         "status": "debut"
       },
       "summary": {
@@ -609,42 +704,50 @@
       "is_title_fight": false,
       "notes": null,
       "win_probability": {
-        "red": 50,
-        "blue": 50
+        "red": 38,
+        "blue": 62
       },
       "red_corner": {
         "original_name": "Navarrete",
-        "display_name": "Navarrete",
-        "full_name": null,
-        "tapology_search_term": "Navarrete Hermosillo",
+        "display_name": "Sergio Navarrete",
+        "full_name": "Sergio Navarrete",
+        "nickname": null,
+        "tapology_search_term": "Sergio Navarrete",
+        "research_notes": "Lost to Elian Robles at PXF 49 (170 lb amateur bout).",
         "canonical_name": "Navarrete",
         "fighter_id": "navarrete",
         "is_matched": true,
-        "is_debut": true,
+        "is_debut": false,
         "match_score": 100.0,
         "record": {
           "wins": 0,
-          "losses": 0,
+          "losses": 1,
           "draws": 0,
           "nc": 0
         },
-        "record_display": "0-0-0",
+        "record_display": "0-1-0",
         "weight_class": "120 lb",
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=Navarrete+Hermosillo",
+        "tapology_url": "https://www.tapology.com/search?term=Sergio+Navarrete",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=Navarrete+Hermosillo",
+          "search_url": "https://www.tapology.com/search?term=Sergio+Navarrete",
           "profile_url": null
         },
-        "status": "debut"
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Sergio+Navarrete",
+          "sherdog": null
+        },
+        "status": "matched"
       },
       "blue_corner": {
         "original_name": "Rodriguez",
         "display_name": "Rodríguez",
         "full_name": null,
+        "nickname": null,
         "tapology_search_term": "Rodríguez Hermosillo",
+        "research_notes": "No confirmed public MMA profile found.",
         "canonical_name": "Rodríguez",
         "fighter_id": "rodriguez",
         "is_matched": true,
@@ -666,13 +769,16 @@
           "search_url": "https://www.tapology.com/search?term=Rodr%C3%ADguez+Hermosillo",
           "profile_url": null
         },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Rodr%C3%ADguez+Hermosillo",
+          "sherdog": null
+        },
         "status": "debut"
       },
       "summary": {
         "both_fighters_matched": true,
         "has_debut_fighter": true,
         "debut_fighters": [
-          "Navarrete",
           "Rodríguez"
         ]
       }
@@ -692,7 +798,9 @@
         "original_name": "Sotelo",
         "display_name": "Sotelo",
         "full_name": null,
+        "nickname": null,
         "tapology_search_term": "Sotelo Hermosillo",
+        "research_notes": "No confirmed public MMA profile found.",
         "canonical_name": "Sotelo",
         "fighter_id": "sotelo",
         "is_matched": true,
@@ -714,13 +822,19 @@
           "search_url": "https://www.tapology.com/search?term=Sotelo+Hermosillo",
           "profile_url": null
         },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Sotelo+Hermosillo",
+          "sherdog": null
+        },
         "status": "debut"
       },
       "blue_corner": {
         "original_name": "Cordova",
         "display_name": "Córdova",
         "full_name": null,
+        "nickname": null,
         "tapology_search_term": "Córdova Hermosillo",
+        "research_notes": "No confirmed public MMA profile found.",
         "canonical_name": "Córdova",
         "fighter_id": "cordova",
         "is_matched": true,
@@ -741,6 +855,10 @@
         "tapology": {
           "search_url": "https://www.tapology.com/search?term=C%C3%B3rdova+Hermosillo",
           "profile_url": null
+        },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=C%C3%B3rdova+Hermosillo",
+          "sherdog": null
         },
         "status": "debut"
       },
@@ -768,7 +886,9 @@
         "original_name": "Silva",
         "display_name": "Silva",
         "full_name": null,
+        "nickname": null,
         "tapology_search_term": "Silva Hermosillo",
+        "research_notes": "No confirmed public MMA profile found.",
         "canonical_name": "Silva",
         "fighter_id": "silva",
         "is_matched": true,
@@ -790,14 +910,20 @@
           "search_url": "https://www.tapology.com/search?term=Silva+Hermosillo",
           "profile_url": null
         },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Silva+Hermosillo",
+          "sherdog": null
+        },
         "status": "debut"
       },
       "blue_corner": {
         "original_name": "Resenthal",
         "display_name": "Miguel Rosenthal",
-        "full_name": null,
+        "full_name": "Miguel Rosenthal",
+        "nickname": null,
         "tapology_search_term": "Miguel Rosenthal",
-        "canonical_name": "Miguel Rosenthal",
+        "research_notes": "Poster misspelling Resenthal; no Sherdog/Tapology profile confirmed.",
+        "canonical_name": "Rosenthal",
         "fighter_id": "miguel-rosenthal",
         "is_matched": true,
         "is_debut": true,
@@ -818,6 +944,10 @@
           "search_url": "https://www.tapology.com/search?term=Miguel+Rosenthal",
           "profile_url": null
         },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Miguel+Rosenthal",
+          "sherdog": null
+        },
         "status": "debut"
       },
       "summary": {
@@ -837,42 +967,50 @@
       "is_title_fight": false,
       "notes": null,
       "win_probability": {
-        "red": 50,
-        "blue": 50
+        "red": 75,
+        "blue": 25
       },
       "red_corner": {
         "original_name": "Canez",
-        "display_name": "Cáñez",
-        "full_name": null,
-        "tapology_search_term": "Cáñez Hermosillo",
+        "display_name": "Luis Cañez",
+        "full_name": "Luis Cañez",
+        "nickname": null,
+        "tapology_search_term": "Luis Cañez",
+        "research_notes": "PXF 49 amateur winner vs Luis Capilla (RNC R2).",
         "canonical_name": "Cáñez",
         "fighter_id": "canez",
         "is_matched": true,
-        "is_debut": true,
+        "is_debut": false,
         "match_score": 100.0,
         "record": {
-          "wins": 0,
+          "wins": 1,
           "losses": 0,
           "draws": 0,
           "nc": 0
         },
-        "record_display": "0-0-0",
+        "record_display": "1-0-0",
         "weight_class": "145 lb",
         "gym": null,
         "city": "Hermosillo",
         "country": "Mexico",
-        "tapology_url": "https://www.tapology.com/search?term=C%C3%A1%C3%B1ez+Hermosillo",
+        "tapology_url": "https://www.tapology.com/fightcenter/fighters/552606-luis-canez",
         "tapology": {
-          "search_url": "https://www.tapology.com/search?term=C%C3%A1%C3%B1ez+Hermosillo",
-          "profile_url": null
+          "search_url": "https://www.tapology.com/search?term=Luis+Ca%C3%B1ez",
+          "profile_url": "https://www.tapology.com/fightcenter/fighters/552606-luis-canez"
         },
-        "status": "debut"
+        "profiles": {
+          "tapology": "https://www.tapology.com/fightcenter/fighters/552606-luis-canez",
+          "sherdog": null
+        },
+        "status": "matched"
       },
       "blue_corner": {
         "original_name": "Baca",
         "display_name": "Baca",
         "full_name": null,
+        "nickname": null,
         "tapology_search_term": "Baca Hermosillo",
+        "research_notes": "No confirmed public MMA profile found.",
         "canonical_name": "Baca",
         "fighter_id": "baca",
         "is_matched": true,
@@ -894,13 +1032,16 @@
           "search_url": "https://www.tapology.com/search?term=Baca+Hermosillo",
           "profile_url": null
         },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Baca+Hermosillo",
+          "sherdog": null
+        },
         "status": "debut"
       },
       "summary": {
         "both_fighters_matched": true,
         "has_debut_fighter": true,
         "debut_fighters": [
-          "Cáñez",
           "Baca"
         ]
       }
@@ -920,7 +1061,9 @@
         "original_name": "Chavira",
         "display_name": "Chavira",
         "full_name": null,
+        "nickname": null,
         "tapology_search_term": "Chavira Hermosillo",
+        "research_notes": "No confirmed public MMA profile found.",
         "canonical_name": "Chavira",
         "fighter_id": "chavira",
         "is_matched": true,
@@ -942,13 +1085,19 @@
           "search_url": "https://www.tapology.com/search?term=Chavira+Hermosillo",
           "profile_url": null
         },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Chavira+Hermosillo",
+          "sherdog": null
+        },
         "status": "debut"
       },
       "blue_corner": {
         "original_name": "Escobar",
         "display_name": "Escobar",
         "full_name": null,
+        "nickname": null,
         "tapology_search_term": "Escobar Hermosillo",
+        "research_notes": "No confirmed public MMA profile found.",
         "canonical_name": "Escobar",
         "fighter_id": "escobar",
         "is_matched": true,
@@ -970,6 +1119,10 @@
           "search_url": "https://www.tapology.com/search?term=Escobar+Hermosillo",
           "profile_url": null
         },
+        "profiles": {
+          "tapology": "https://www.tapology.com/search?term=Escobar+Hermosillo",
+          "sherdog": null
+        },
         "status": "debut"
       },
       "summary": {
@@ -983,11 +1136,11 @@
     }
   ],
   "metadata": {
-    "processed_at": "2026-06-21T06:17:36.623937+00:00",
+    "processed_at": "2026-06-21T06:21:37.627202+00:00",
     "version": "0.3.0",
     "total_bouts": 13,
     "matched_fighters": 26,
-    "debut_fighters": 16,
+    "debut_fighters": 13,
     "unmatched_names": [],
     "match_threshold": 82.0,
     "source": "pxf50_official_poster"

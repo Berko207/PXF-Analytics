@@ -38,7 +38,14 @@ export function FighterDetailSheet({
         {fighter ? (
           <>
             <SheetHeader>
-              <SheetTitle className="text-2xl">{displayName}</SheetTitle>
+              <SheetTitle className="text-2xl">
+                {displayName}
+                {fighter.nickname ? (
+                  <span className="ml-2 text-base font-normal text-muted-foreground">
+                    &ldquo;{fighter.nickname}&rdquo;
+                  </span>
+                ) : null}
+              </SheetTitle>
               <SheetDescription>
                 {fighter.original_name !== displayName ? `Card name: ${fighter.original_name} · ` : ""}
                 {fighter.weight_class ?? "Weight class TBD"}
@@ -101,6 +108,36 @@ export function FighterDetailSheet({
 
               <div className="rounded-xl border border-border/60 bg-muted/20 p-3">
                 <p className="text-xs uppercase tracking-wide text-muted-foreground">
+                  Public profiles
+                </p>
+                <div className="mt-2 flex flex-col gap-2">
+                  <Button asChild variant="outline" size="sm" className="justify-start">
+                    <a href={getTapologyHref(fighter)} target="_blank" rel="noopener noreferrer">
+                      Tapology
+                      <ExternalLink className="size-3.5" />
+                    </a>
+                  </Button>
+                  {fighter.profiles?.sherdog ? (
+                    <Button asChild variant="outline" size="sm" className="justify-start">
+                      <a
+                        href={fighter.profiles.sherdog}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Sherdog
+                        <ExternalLink className="size-3.5" />
+                      </a>
+                    </Button>
+                  ) : null}
+                </div>
+              </div>
+
+              {fighter.research_notes ? (
+                <p className="text-xs leading-relaxed text-muted-foreground">{fighter.research_notes}</p>
+              ) : null}
+
+              <div className="rounded-xl border border-border/60 bg-muted/20 p-3">
+                <p className="text-xs uppercase tracking-wide text-muted-foreground">
                   Tapology search
                 </p>
                 <div className="mt-2 flex items-center gap-2">
@@ -116,13 +153,6 @@ export function FighterDetailSheet({
                   </Button>
                 </div>
               </div>
-
-              <Button asChild className="w-full" variant="outline">
-                <a href={getTapologyHref(fighter)} target="_blank" rel="noopener noreferrer">
-                  View on Tapology
-                  <ExternalLink className="size-4" />
-                </a>
-              </Button>
 
               {bout ? (
                 <>
