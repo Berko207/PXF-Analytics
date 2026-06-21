@@ -67,9 +67,9 @@ FIGHTER_DATABASE: list[FighterRecord] = [
         record={"wins": 3, "losses": 2, "draws": 0, "nc": 0},
         weight_class="135 lb",
         gym="Team Cuates Paez",
-        city="Agua Prieta",
+        city="Hermosillo",
         sherdog_slug="Daniel-Lugo-317851",
-        notes="Sherdog pro record verified through PXF 49 (Mar 2026).",
+        notes="Hermosillo home gym (Team Cuates Paez). Also trains in Peoria, AZ with Sean O'Malley's camp. Sherdog pro record verified through PXF 49 (Mar 2026).",
     ),
     _f(
         "juan-garzon",
