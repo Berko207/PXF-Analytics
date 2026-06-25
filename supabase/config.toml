@@ -1,0 +1,11 @@
+# Supabase project config — linked to the "poly-db" project (shared backend).
+# PXF Analytics keeps all of its domain tables in a dedicated `pxf` schema so
+# they never collide with the Polymarket bot/tooling tables in `public`.
+project_id = "kfbcotavcrueqryodjqy"
+
+[api]
+# IMPORTANT: the `pxf` schema must be exposed to PostgREST for supabase-js to
+# read/write it. Locally this declares it; on the hosted project you must also
+# add `pxf` under Dashboard -> Project Settings -> API -> Exposed schemas.
+schemas = ["public", "graphql_public", "pxf"]
+extra_search_path = ["public", "extensions"]
