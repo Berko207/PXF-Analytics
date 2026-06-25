@@ -64,12 +64,19 @@ def enrich_fighter(
     if registry:
         display_name = registry.get("full_name") or registry["canonical_name"]
 
-    total_fights = 0
-    if registry and registry.get("record"):
-        record = registry["record"]
-        total_fights = sum(record.get(key, 0) for key in ("wins", "losses", "draws", "nc"))
+    record = registry.get("record") if registry else None
+    has_known_record = record is not None
+    total_fights = (
+        sum(record.get(key, 0) for key in ("wins", "losses", "draws", "nc"))
+        if has_known_record
+        else 0
+    )
 
-    is_debut = marked_debut or debut_from_marker or (match.is_match and total_fights == 0)
+    # A debut requires a *known* empty record. An unknown record (``None``) means
+    # the fighter is unverified, not necessarily debuting.
+    is_debut = marked_debut or debut_from_marker or (
+        match.is_match and has_known_record and total_fights == 0
+    )
     is_matched = match.is_match
 
     tapology_slug = registry.get("tapology_slug") if registry else None

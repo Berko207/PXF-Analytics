@@ -25,7 +25,7 @@
         "full_name": "Daniel Vicente Lugo Valdez",
         "nickname": "Super",
         "tapology_search_term": "Daniel Vicente Lugo Valdez",
-        "research_notes": "Hermosillo home gym (Team Cuates Paez). Also trains in Peoria, AZ with Sean O'Malley's camp. Sherdog pro record verified through PXF 49 (Mar 2026).",
+        "research_notes": "Sherdog pro record verified through PXF 49 (Mar 2026).",
         "canonical_name": "Lugo",
         "fighter_id": "lugo",
         "is_matched": true,
@@ -59,7 +59,7 @@
         "full_name": "Alex Garzon Gutierrez",
         "nickname": null,
         "tapology_search_term": "Alex Garzon Gutierrez",
-        "research_notes": "PXF/Nogales regional bantamweight; defeated Kevin Rosales at PXF 48. Verify vs poster.",
+        "research_notes": "Tapology profile matched; verify identity vs poster.",
         "canonical_name": "Garzón",
         "fighter_id": "juan-garzon",
         "is_matched": true,
@@ -101,8 +101,8 @@
       "is_title_fight": false,
       "notes": null,
       "win_probability": {
-        "red": 61,
-        "blue": 39
+        "red": 35,
+        "blue": 65
       },
       "red_corner": {
         "original_name": "Carrera",
@@ -110,19 +110,14 @@
         "full_name": null,
         "nickname": null,
         "tapology_search_term": "Carrera Hermosillo",
-        "research_notes": "No confirmed Tapology/Sherdog profile for this PXF 50 poster name yet.",
+        "research_notes": "No confirmed public MMA profile found.",
         "canonical_name": "Carrera",
         "fighter_id": "carrera",
         "is_matched": true,
         "is_debut": false,
         "match_score": 100.0,
-        "record": {
-          "wins": 5,
-          "losses": 2,
-          "draws": 0,
-          "nc": 0
-        },
-        "record_display": "5-2-0",
+        "record": null,
+        "record_display": null,
         "weight_class": "145 lb",
         "gym": null,
         "city": "Hermosillo",
@@ -144,7 +139,7 @@
         "full_name": "Humberto Duarte",
         "nickname": "Moso",
         "tapology_search_term": "Humberto Duarte",
-        "research_notes": "US-based bantamweight; frequent PXM/PXF competitor in Sonora.",
+        "research_notes": "Tapology and Sherdog profiles confirmed.",
         "canonical_name": "Duarte",
         "fighter_id": "duarte",
         "is_matched": true,
@@ -186,8 +181,8 @@
       "is_title_fight": false,
       "notes": null,
       "win_probability": {
-        "red": 35,
-        "blue": 65
+        "red": 38,
+        "blue": 62
       },
       "red_corner": {
         "original_name": "Figueroa",
@@ -195,7 +190,7 @@
         "full_name": "Manuel de Jesus Figueroa",
         "nickname": "Bobby",
         "tapology_search_term": "Manuel de Jesus Figueroa",
-        "research_notes": "Also known as La Bestia; 4-1 amateur record on Sherdog.",
+        "research_notes": "Tapology and Sherdog profiles confirmed.",
         "canonical_name": "Figueroa",
         "fighter_id": "figueroa",
         "is_matched": true,
@@ -229,19 +224,14 @@
         "full_name": "Carlos Linebaugh",
         "nickname": null,
         "tapology_search_term": "Carlos Linebaugh",
-        "research_notes": "Poster spelling Linebough; no Sherdog/Tapology MMA profile confirmed.",
+        "research_notes": "Poster spelling 'Linebough'; no confirmed public MMA profile found.",
         "canonical_name": "Linebaugh",
         "fighter_id": "carlos-linebaugh",
         "is_matched": true,
         "is_debut": false,
         "match_score": 100.0,
-        "record": {
-          "wins": 6,
-          "losses": 3,
-          "draws": 0,
-          "nc": 0
-        },
-        "record_display": "6-3-0",
+        "record": null,
+        "record_display": null,
         "weight_class": "140 lb",
         "gym": "Obregon MMA",
         "city": "Ciudad Obregón",
@@ -271,8 +261,8 @@
       "is_title_fight": false,
       "notes": null,
       "win_probability": {
-        "red": 52,
-        "blue": 48
+        "red": 50,
+        "blue": 50
       },
       "red_corner": {
         "original_name": "Arroyo",
@@ -286,13 +276,8 @@
         "is_matched": true,
         "is_debut": false,
         "match_score": 100.0,
-        "record": {
-          "wins": 5,
-          "losses": 2,
-          "draws": 0,
-          "nc": 0
-        },
-        "record_display": "5-2-0",
+        "record": null,
+        "record_display": null,
         "weight_class": "140 lb",
         "gym": null,
         "city": "Hermosillo",
@@ -314,19 +299,14 @@
         "full_name": null,
         "nickname": null,
         "tapology_search_term": "Bailey Nogales",
-        "research_notes": "No confirmed public MMA profile found for Nogales/Sonora.",
+        "research_notes": "No confirmed public MMA profile found.",
         "canonical_name": "Bailey",
         "fighter_id": "bailey",
         "is_matched": true,
         "is_debut": false,
         "match_score": 100.0,
-        "record": {
-          "wins": 4,
-          "losses": 1,
-          "draws": 0,
-          "nc": 0
-        },
-        "record_display": "4-1-0",
+        "record": null,
+        "record_display": null,
         "weight_class": "140 lb",
         "gym": null,
         "city": "Nogales",
@@ -356,8 +336,8 @@
       "is_title_fight": false,
       "notes": null,
       "win_probability": {
-        "red": 62,
-        "blue": 38
+        "red": 50,
+        "blue": 50
       },
       "red_corner": {
         "original_name": "Gutierrez",
@@ -365,19 +345,14 @@
         "full_name": null,
         "nickname": null,
         "tapology_search_term": "Gutiérrez Hermosillo",
-        "research_notes": "Common surname; no confirmed PXF-linked profile yet.",
+        "research_notes": "Common surname; no confirmed public MMA profile found.",
         "canonical_name": "Gutiérrez",
         "fighter_id": "gutierrez",
         "is_matched": true,
         "is_debut": false,
         "match_score": 100.0,
-        "record": {
-          "wins": 6,
-          "losses": 1,
-          "draws": 0,
-          "nc": 0
-        },
-        "record_display": "6-1-0",
+        "record": null,
+        "record_display": null,
         "weight_class": "125 lb",
         "gym": null,
         "city": "Hermosillo",
@@ -405,13 +380,8 @@
         "is_matched": true,
         "is_debut": false,
         "match_score": 100.0,
-        "record": {
-          "wins": 3,
-          "losses": 2,
-          "draws": 0,
-          "nc": 0
-        },
-        "record_display": "3-2-0",
+        "record": null,
+        "record_display": null,
         "weight_class": "125 lb",
         "gym": null,
         "city": "Hermosillo",
@@ -450,7 +420,7 @@
         "full_name": "Daniel Morales",
         "nickname": "Cirujano",
         "tapology_search_term": "Daniel Morales",
-        "research_notes": "PXF 49 amateur winner vs Daniel Soto; also fought La Kampal Vol. 02.",
+        "research_notes": "Tapology and Sherdog profiles confirmed.",
         "canonical_name": "Morales",
         "fighter_id": "morales",
         "is_matched": true,
@@ -484,7 +454,7 @@
         "full_name": null,
         "nickname": null,
         "tapology_search_term": "González Hermosillo",
-        "research_notes": "Two González entries on poster; profile not confirmed.",
+        "research_notes": "Two González entries on poster; no confirmed public MMA profile found.",
         "canonical_name": "González",
         "fighter_id": "gonzalez",
         "is_matched": true,
@@ -537,7 +507,7 @@
         "full_name": null,
         "nickname": null,
         "tapology_search_term": "González Hermosillo",
-        "research_notes": "Two González entries on poster; profile not confirmed.",
+        "research_notes": "Two González entries on poster; no confirmed public MMA profile found.",
         "canonical_name": "González",
         "fighter_id": "gonzalez",
         "is_matched": true,
@@ -704,8 +674,8 @@
       "is_title_fight": false,
       "notes": null,
       "win_probability": {
-        "red": 38,
-        "blue": 62
+        "red": 50,
+        "blue": 50
       },
       "red_corner": {
         "original_name": "Navarrete",
@@ -713,19 +683,14 @@
         "full_name": "Sergio Navarrete",
         "nickname": null,
         "tapology_search_term": "Sergio Navarrete",
-        "research_notes": "Lost to Elian Robles at PXF 49 (170 lb amateur bout).",
+        "research_notes": "No confirmed public MMA profile found.",
         "canonical_name": "Navarrete",
         "fighter_id": "navarrete",
         "is_matched": true,
         "is_debut": false,
         "match_score": 100.0,
-        "record": {
-          "wins": 0,
-          "losses": 1,
-          "draws": 0,
-          "nc": 0
-        },
-        "record_display": "0-1-0",
+        "record": null,
+        "record_display": null,
         "weight_class": "120 lb",
         "gym": null,
         "city": "Hermosillo",
@@ -922,7 +887,7 @@
         "full_name": "Miguel Rosenthal",
         "nickname": null,
         "tapology_search_term": "Miguel Rosenthal",
-        "research_notes": "Poster misspelling Resenthal; no Sherdog/Tapology profile confirmed.",
+        "research_notes": "Poster spelling 'Resenthal'; no confirmed public MMA profile found.",
         "canonical_name": "Rosenthal",
         "fighter_id": "miguel-rosenthal",
         "is_matched": true,
@@ -976,7 +941,7 @@
         "full_name": "Luis Cañez",
         "nickname": null,
         "tapology_search_term": "Luis Cañez",
-        "research_notes": "PXF 49 amateur winner vs Luis Capilla (RNC R2).",
+        "research_notes": "Tapology profile confirmed.",
         "canonical_name": "Cáñez",
         "fighter_id": "canez",
         "is_matched": true,
@@ -1136,7 +1101,7 @@
     }
   ],
   "metadata": {
-    "processed_at": "2026-06-21T06:21:37.627202+00:00",
+    "processed_at": "2026-06-25T18:23:09.534783+00:00",
     "version": "0.3.0",
     "total_bouts": 13,
     "matched_fighters": 26,
