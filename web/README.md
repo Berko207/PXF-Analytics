@@ -14,8 +14,8 @@ Professional Next.js dashboard for PXF fight card analytics, win probabilities, 
 
 ```bash
 cd web
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000)
@@ -63,11 +63,30 @@ web/
 ## Scripts
 
 ```bash
-npm run dev      # Development server
-npm run build    # Production build
-npm run start    # Serve production build
-npm run lint     # ESLint
+pnpm dev      # Development server
+pnpm build    # Production build
+pnpm start    # Serve production build
+pnpm lint     # ESLint
 ```
+
+## Deploy (Vercel)
+
+Project: **pxf-analytics** — root directory must be **`web`** (not the repo root).
+
+Vercel picks up **pnpm** from `packageManager` in `package.json` and `vercel.json`.
+Node **20+** is required (project uses 24.x on Vercel).
+
+When the Supabase auth branch is merged, add these in **Vercel → Settings → Environment Variables**:
+
+| Variable | Environments |
+|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | Production, Preview, Development |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Production, Preview, Development |
+
+Optional (server-only admin actions): `SUPABASE_SERVICE_ROLE_KEY` — never prefix with `NEXT_PUBLIC_`.
+
+After auth is live, add your production URL to **Supabase → Authentication → URL configuration**
+(e.g. `https://pxf-analytics.vercel.app/auth/callback`).
 
 ## Features (MVP)
 

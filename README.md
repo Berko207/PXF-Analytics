@@ -73,8 +73,8 @@ The Next.js dashboard lives in `web/` and reads from `web/src/data/pxf50_card.js
 
 ```bash
 cd web
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000)
