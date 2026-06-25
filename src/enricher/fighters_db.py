@@ -2,7 +2,11 @@
 
 from __future__ import annotations
 
-from typing import TypedDict
+from typing import Any, TypedDict
+
+# Sentinel distinguishing "record omitted" (assume a 0-0-0 debut record) from an
+# explicit ``record=None`` (record genuinely unknown / unverified — renders as "—").
+_RECORD_UNSET: Any = object()
 
 
 class FighterRecord(TypedDict, total=False):
@@ -13,7 +17,7 @@ class FighterRecord(TypedDict, total=False):
     aliases: list[str]
     tapology_slug: str | None
     sherdog_slug: str | None
-    record: dict[str, int]
+    record: dict[str, int] | None
     weight_class: str | None
     gym: str | None
     city: str | None
@@ -28,7 +32,7 @@ def _f(
     full_name: str | None = None,
     nickname: str | None = None,
     aliases: list[str] | None = None,
-    record: dict[str, int] | None = None,
+    record: dict[str, int] | None = _RECORD_UNSET,
     weight_class: str | None = None,
     gym: str | None = None,
     city: str = "Hermosillo",
@@ -45,7 +49,11 @@ def _f(
         "aliases": aliases or [],
         "tapology_slug": slug,
         "sherdog_slug": sherdog_slug,
-        "record": record or {"wins": 0, "losses": 0, "draws": 0, "nc": 0},
+        "record": (
+            {"wins": 0, "losses": 0, "draws": 0, "nc": 0}
+            if record is _RECORD_UNSET
+            else record
+        ),
         "weight_class": weight_class,
         "gym": gym,
         "city": city,
@@ -69,7 +77,7 @@ FIGHTER_DATABASE: list[FighterRecord] = [
         gym="Team Cuates Paez",
         city="Hermosillo",
         sherdog_slug="Daniel-Lugo-317851",
-        notes="Hermosillo home gym (Team Cuates Paez). Also trains in Peoria, AZ with Sean O'Malley's camp. Sherdog pro record verified through PXF 49 (Mar 2026).",
+        notes="Sherdog pro record verified through PXF 49 (Mar 2026).",
     ),
     _f(
         "juan-garzon",
@@ -81,15 +89,15 @@ FIGHTER_DATABASE: list[FighterRecord] = [
         gym="Spartan Warriors Cabo San Lucas",
         city="La Paz",
         slug="342124-alex-garzon-gutierrez",
-        notes="PXF/Nogales regional bantamweight; defeated Kevin Rosales at PXF 48. Verify vs poster.",
+        notes="Tapology profile matched; verify identity vs poster.",
     ),
     _f(
         "carrera",
         "Carrera",
         aliases=["CARRERA"],
-        record={"wins": 5, "losses": 2, "draws": 0, "nc": 0},
+        record=None,
         weight_class="145 lb",
-        notes="No confirmed Tapology/Sherdog profile for this PXF 50 poster name yet.",
+        notes="No confirmed public MMA profile found.",
     ),
     _f(
         "duarte",
@@ -104,7 +112,7 @@ FIGHTER_DATABASE: list[FighterRecord] = [
         country="United States",
         slug="41498-humberto-duarte",
         sherdog_slug="Humberto-Duarte-124399",
-        notes="US-based bantamweight; frequent PXM/PXF competitor in Sonora.",
+        notes="Tapology and Sherdog profiles confirmed.",
     ),
     _f(
         "figueroa",
@@ -117,24 +125,24 @@ FIGHTER_DATABASE: list[FighterRecord] = [
         gym="Rival MMA",
         slug="366790-manuel-figueroa",
         sherdog_slug="Manuel-Figueroa-417879",
-        notes="Also known as La Bestia; 4-1 amateur record on Sherdog.",
+        notes="Tapology and Sherdog profiles confirmed.",
     ),
     _f(
         "carlos-linebaugh",
         "Linebaugh",
         full_name="Carlos Linebaugh",
         aliases=["Linebough", "LINEBOUGH", "Linebaugh", "Carlos Linebaugh"],
-        record={"wins": 6, "losses": 3, "draws": 0, "nc": 0},
+        record=None,
         weight_class="140 lb",
         gym="Obregon MMA",
         city="Ciudad Obregón",
-        notes="Poster spelling Linebough; no Sherdog/Tapology MMA profile confirmed.",
+        notes="Poster spelling 'Linebough'; no confirmed public MMA profile found.",
     ),
     _f(
         "arroyo",
         "Arroyo",
         aliases=["ARROYO"],
-        record={"wins": 5, "losses": 2, "draws": 0, "nc": 0},
+        record=None,
         weight_class="140 lb",
         notes="No confirmed public MMA profile found.",
     ),
@@ -142,24 +150,24 @@ FIGHTER_DATABASE: list[FighterRecord] = [
         "bailey",
         "Bailey",
         aliases=["BAILEY"],
-        record={"wins": 4, "losses": 1, "draws": 0, "nc": 0},
+        record=None,
         weight_class="140 lb",
         city="Nogales",
-        notes="No confirmed public MMA profile found for Nogales/Sonora.",
+        notes="No confirmed public MMA profile found.",
     ),
     _f(
         "gutierrez",
         "Gutiérrez",
         aliases=["Gutierrez", "GUTIERREZ", "GUTIÉRREZ"],
-        record={"wins": 6, "losses": 1, "draws": 0, "nc": 0},
+        record=None,
         weight_class="125 lb",
-        notes="Common surname; no confirmed PXF-linked profile yet.",
+        notes="Common surname; no confirmed public MMA profile found.",
     ),
     _f(
         "borja",
         "Borja",
         aliases=["BORJA"],
-        record={"wins": 3, "losses": 2, "draws": 0, "nc": 0},
+        record=None,
         weight_class="125 lb",
         notes="No confirmed public MMA profile found.",
     ),
@@ -176,14 +184,14 @@ FIGHTER_DATABASE: list[FighterRecord] = [
         city="Guaymas",
         slug="552561-daniel-morales",
         sherdog_slug="Daniel-Morales-493347",
-        notes="PXF 49 amateur winner vs Daniel Soto; also fought La Kampal Vol. 02.",
+        notes="Tapology and Sherdog profiles confirmed.",
     ),
     _f(
         "gonzalez",
         "González",
         aliases=["Gonzalez", "GONZÁLEZ", "GONZALEZ"],
         weight_class="135 lb",
-        notes="Two González entries on poster; profile not confirmed.",
+        notes="Two González entries on poster; no confirmed public MMA profile found.",
     ),
     _f(
         "lopez",
@@ -212,9 +220,9 @@ FIGHTER_DATABASE: list[FighterRecord] = [
         "Navarrete",
         full_name="Sergio Navarrete",
         aliases=["NAVARRETE"],
-        record={"wins": 0, "losses": 1, "draws": 0, "nc": 0},
+        record=None,
         weight_class="120 lb",
-        notes="Lost to Elian Robles at PXF 49 (170 lb amateur bout).",
+        notes="No confirmed public MMA profile found.",
     ),
     _f(
         "rodriguez",
@@ -251,7 +259,7 @@ FIGHTER_DATABASE: list[FighterRecord] = [
         aliases=["Resenthal", "RESENTHAL", "Rosenthal", "Miguel Rosenthal"],
         weight_class="125 lb",
         city="Nogales",
-        notes="Poster misspelling Resenthal; no Sherdog/Tapology profile confirmed.",
+        notes="Poster spelling 'Resenthal'; no confirmed public MMA profile found.",
     ),
     _f(
         "canez",
@@ -261,7 +269,7 @@ FIGHTER_DATABASE: list[FighterRecord] = [
         record={"wins": 1, "losses": 0, "draws": 0, "nc": 0},
         weight_class="145 lb",
         slug="552606-luis-canez",
-        notes="PXF 49 amateur winner vs Luis Capilla (RNC R2).",
+        notes="Tapology profile confirmed.",
     ),
     _f(
         "baca",
