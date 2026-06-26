@@ -1,5 +1,6 @@
 "use client";
 
+import type { FightCard } from "@/types/fight-card";
 import { getBoutProbabilitySummary } from "@/lib/chart-data";
 import {
   Bar,
@@ -12,8 +13,8 @@ import {
 } from "recharts";
 
 /** Stacked horizontal-style bout probability overview across the card. */
-export function BoutProbabilityChart() {
-  const data = getBoutProbabilitySummary();
+export function BoutProbabilityChart({ card }: { card?: FightCard }) {
+  const data = getBoutProbabilitySummary(card);
 
   return (
     <div className="h-80 w-full">

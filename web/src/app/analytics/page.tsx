@@ -3,10 +3,10 @@ import { Suspense } from "react";
 import { AnalyticsDashboard } from "@/components/charts/analytics-dashboard";
 import { EventHeader } from "@/components/dashboard/event-header";
 import { DashboardSkeleton } from "@/components/ui/loading-skeleton";
-import { getFightCard } from "@/lib/data";
+import { getFightCardAsync } from "@/lib/data";
 
-export default function AnalyticsPage() {
-  const card = getFightCard();
+export default async function AnalyticsPage() {
+  const card = await getFightCardAsync();
 
   return (
     <div className="space-y-8">
@@ -20,7 +20,7 @@ export default function AnalyticsPage() {
       <EventHeader event={card.event} />
 
       <Suspense fallback={<DashboardSkeleton />}>
-        <AnalyticsDashboard />
+        <AnalyticsDashboard card={card} />
       </Suspense>
     </div>
   );
