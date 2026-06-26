@@ -54,6 +54,9 @@ export function EventHeader({ event }: EventHeaderProps) {
               </a>
             </Button>
           ) : null}
+          <Button asChild variant="outline">
+            <Link href="/analytics">View Analytics</Link>
+          </Button>
           <Button asChild>
             <Link href="/fight-card">View Full Card</Link>
           </Button>

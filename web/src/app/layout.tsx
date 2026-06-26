@@ -21,7 +21,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "PXF Analytics | Sonora MMA Intelligence",
   description:
-    "Professional fight card analytics and win probability insights for PXF and Sonora regional MMA.",
+    "Professional fight card analytics, win probability models, and market-style odds for PXF and Sonora regional MMA. Prediction markets coming soon.",
 };
 
 export default function RootLayout({
