@@ -4,6 +4,15 @@ export type FighterStatus = "matched" | "suggested" | "debut";
 
 export type BoutLevel = "PRO" | "AMATEUR";
 
+export type MarketStatus =
+  | "pending"
+  | "created"
+  | "trading_open"
+  | "closed"
+  | "resolved"
+  | "settled"
+  | "cancelled";
+
 export interface FighterRecord {
   wins: number;
   losses: number;
@@ -43,6 +52,15 @@ export interface Fighter {
   tapology: TapologyLinks;
   profiles: FighterProfiles;
   status: FighterStatus;
+  /** Canonical ELO when loaded from Supabase (optional). */
+  elo?: number | null;
+}
+
+export interface BoutMarketInfo {
+  id: string | null;
+  matchup_id: string;
+  status: MarketStatus;
+  rain_market_id: string | null;
 }
 
 export interface WinProbability {
@@ -67,6 +85,11 @@ export interface Bout {
   red_corner: Fighter;
   blue_corner: Fighter;
   summary: BoutSummary;
+  /** Supabase matchup uuid (when loaded from DB). */
+  matchup_id?: string;
+  red_elo?: number | null;
+  blue_elo?: number | null;
+  market?: BoutMarketInfo | null;
 }
 
 export interface EventInfo {

@@ -1,10 +1,10 @@
 import { EventHeader } from "@/components/dashboard/event-header";
 import { FightCardGrid } from "@/components/fight-card/fight-card-grid";
 import { Badge } from "@/components/ui/badge";
-import { getFightCard } from "@/lib/data";
+import { getFightCardAsync } from "@/lib/data";
 
-export default function FightCardPage() {
-  const card = getFightCard();
+export default async function FightCardPage() {
+  const card = await getFightCardAsync();
 
   return (
     <div className="space-y-8">
@@ -19,7 +19,7 @@ export default function FightCardPage() {
       </div>
 
       <EventHeader event={card.event} />
-      <FightCardGrid />
+      <FightCardGrid card={card} />
     </div>
   );
 }

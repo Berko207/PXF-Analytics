@@ -7,11 +7,16 @@ import { OddsMovementChart } from "@/components/charts/odds-movement-chart";
 import { WinProbabilityGauge } from "@/components/charts/win-probability-gauge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { getFightCard } from "@/lib/data";
-import type { Bout } from "@/types/fight-card";
+import { useMarketOdds } from "@/hooks/use-market-odds";
+import { getBoutMarketContext } from "@/lib/markets";
+import { cn } from "@/lib/utils";
+import type { Bout, FightCard } from "@/types/fight-card";
 
-export function AnalyticsDashboard() {
-  const card = getFightCard();
+interface AnalyticsDashboardProps {
+  card: FightCard;
+}
+
+export function AnalyticsDashboard({ card }: AnalyticsDashboardProps) {
   const mainEvent = card.bouts[0];
   const [selectedBout, setSelectedBout] = useState<Bout>(mainEvent);
 
@@ -21,36 +26,25 @@ export function AnalyticsDashboard() {
         <Card>
           <CardHeader>
             <CardTitle>Main Event Probability</CardTitle>
-            <CardDescription>
-              Implied win probability — placeholder model data for {mainEvent.label}
-            </CardDescription>
+            <CardDescription>Model vs market odds — {mainEvent.label}</CardDescription>
           </CardHeader>
           <CardContent>
             <WinProbabilityGauge
-              probability={mainEvent.win_probability}
+              bout={mainEvent}
               redName={mainEvent.red_corner.display_name}
               blueName={mainEvent.blue_corner.display_name}
             />
-            <div className="mt-4 grid grid-cols-2 gap-3 text-center text-sm">
-              <div className="rounded-lg border border-red-500/20 bg-red-500/5 p-3">
-                <p className="text-red-400">{mainEvent.red_corner.display_name}</p>
-                <p className="mt-1 font-mono text-xl">{mainEvent.win_probability.red}%</p>
-              </div>
-              <div className="rounded-lg border border-blue-500/20 bg-blue-500/5 p-3">
-                <p className="text-blue-400">{mainEvent.blue_corner.display_name}</p>
-                <p className="mt-1 font-mono text-xl">{mainEvent.win_probability.blue}%</p>
-              </div>
-            </div>
+            <BoutOddsLegend bout={mainEvent} className="mt-4" />
           </CardContent>
         </Card>
 
         <Card>
           <CardHeader>
             <CardTitle>Card-Wide Probabilities</CardTitle>
-            <CardDescription>Stacked implied probability by bout number</CardDescription>
+            <CardDescription>Stacked model probability by bout number</CardDescription>
           </CardHeader>
           <CardContent>
-            <BoutProbabilityChart />
+            <BoutProbabilityChart card={card} />
           </CardContent>
         </Card>
       </section>
@@ -87,11 +81,7 @@ export function AnalyticsDashboard() {
                       {bout.red_corner.display_name} vs {bout.blue_corner.display_name}
                     </p>
                   </div>
-                  <p className="font-mono text-sm">
-                    <span className="text-red-400">{bout.win_probability.red}%</span>
-                    <span className="text-muted-foreground"> / </span>
-                    <span className="text-blue-400">{bout.win_probability.blue}%</span>
-                  </p>
+                  <BoutOddsInline bout={bout} />
                 </div>
                 <OddsMovementChart
                   boutNumber={bout.bout_number}
@@ -103,6 +93,73 @@ export function AnalyticsDashboard() {
           </Tabs>
         </CardContent>
       </Card>
+    </div>
+  );
+}
+
+function BoutOddsInline({ bout }: { bout: Bout }) {
+  const ctx = getBoutMarketContext(bout);
+  const { modelOdds, marketOdds, marketAvailable, loading } = useMarketOdds({
+    marketId: ctx.marketId,
+    marketStatus: ctx.marketStatus,
+    redElo: bout.red_elo ?? bout.red_corner.elo,
+    blueElo: bout.blue_elo ?? bout.blue_corner.elo,
+  });
+
+  return (
+    <p className="font-mono text-sm">
+      <span className="text-muted-foreground">Model </span>
+      <span className="text-red-400">{modelOdds.red}%</span>
+      <span className="text-muted-foreground"> / </span>
+      <span className="text-blue-400">{modelOdds.blue}%</span>
+      <span className="mx-2 text-muted-foreground">·</span>
+      <span className="text-muted-foreground">Market </span>
+      {marketAvailable && marketOdds && !loading ? (
+        <>
+          <span className="text-red-400">{marketOdds.red}%</span>
+          <span className="text-muted-foreground"> / </span>
+          <span className="text-blue-400">{marketOdds.blue}%</span>
+        </>
+      ) : (
+        <span className="text-muted-foreground">Pending</span>
+      )}
+    </p>
+  );
+}
+
+function BoutOddsLegend({ bout, className }: { bout: Bout; className?: string }) {
+  const ctx = getBoutMarketContext(bout);
+  const { modelOdds, marketOdds, marketAvailable, loading } = useMarketOdds({
+    marketId: ctx.marketId,
+    marketStatus: ctx.marketStatus,
+    redElo: bout.red_elo ?? bout.red_corner.elo,
+    blueElo: bout.blue_elo ?? bout.blue_corner.elo,
+  });
+
+  return (
+    <div className={cn("grid grid-cols-2 gap-3 text-center text-sm", className)}>
+      <div className="rounded-lg border border-red-500/20 bg-red-500/5 p-3">
+        <p className="text-red-400">{bout.red_corner.display_name}</p>
+        <p className="mt-1 font-mono text-xl">{modelOdds.red}%</p>
+        <p className="text-[10px] uppercase tracking-wide text-muted-foreground">Model</p>
+      </div>
+      <div className="rounded-lg border border-blue-500/20 bg-blue-500/5 p-3">
+        <p className="text-blue-400">{bout.blue_corner.display_name}</p>
+        <p className="mt-1 font-mono text-xl">{modelOdds.blue}%</p>
+        <p className="text-[10px] uppercase tracking-wide text-muted-foreground">Model</p>
+      </div>
+      <div className="col-span-2 rounded-lg border border-border/60 bg-muted/20 p-3">
+        <p className="text-[10px] uppercase tracking-wide text-muted-foreground">Market</p>
+        {marketAvailable && marketOdds && !loading ? (
+          <p className="mt-1 font-mono">
+            <span className="text-red-400">{marketOdds.red}%</span>
+            <span className="text-muted-foreground"> / </span>
+            <span className="text-blue-400">{marketOdds.blue}%</span>
+          </p>
+        ) : (
+          <p className="mt-1 text-muted-foreground">Pending — no on-chain market yet</p>
+        )}
+      </div>
     </div>
   );
 }
