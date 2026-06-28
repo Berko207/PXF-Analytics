@@ -2,7 +2,9 @@
 
 import type { Bout } from "@/types/fight-card";
 import { useMarketOdds } from "@/hooks/use-market-odds";
-import { getBoutMarketContext } from "@/lib/markets";
+import { OddsSplitBar } from "@/components/markets/odds-ui";
+import { getBoutMarketContext, getMarketsProviderKind } from "@/lib/markets";
+import { probToAmerican } from "@/lib/odds";
 import type { WinProbability } from "@/types/fight-card";
 import {
   ConfidenceBadge,
@@ -21,7 +23,7 @@ interface WinProbabilityGaugeProps {
   probability?: WinProbability;
 }
 
-/** Polymarket-style semi-circular win probability gauge with live odds. */
+/** Semi-circular win probability gauge with model/market source and American odds. */
 export function WinProbabilityGauge({
   bout,
   redName,
@@ -37,12 +39,15 @@ export function WinProbabilityGauge({
     blueElo: bout.blue_elo ?? bout.blue_corner.elo,
   });
 
-  // The model number is the server-computed prediction (with confidence +
-  // factors); the hook's plain-Elo modelOdds is only a fallback.
   const model: WinProbability = bout.win_probability ?? modelOdds;
-  const display =
-    probability ??
-    (marketAvailable && marketOdds && !loading ? marketOdds : model);
+  const hasMarket = marketAvailable && marketOdds && !loading;
+  const display = probability ?? (hasMarket ? marketOdds : model);
+  const provider = getMarketsProviderKind();
+  const sourceLabel = hasMarket
+    ? provider === "rain"
+      ? "Rain"
+      : "Market"
+    : "Model";
 
   const data = [
     { name: "Red", value: display.red, fill: "#ef4444" },
@@ -51,11 +56,13 @@ export function WinProbabilityGauge({
 
   const favorite =
     display.red >= display.blue
-      ? { name: redName, value: display.red, color: "text-red-400" }
-      : { name: blueName, value: display.blue, color: "text-blue-400" };
+      ? { corner: "red" as const, name: redName, value: display.red, color: "text-red-400" }
+      : { corner: "blue" as const, name: blueName, value: display.blue, color: "text-blue-400" };
 
-  const sourceLabel =
-    marketAvailable && marketOdds && !loading ? "Market" : "Model";
+  const underdog =
+    favorite.corner === "red"
+      ? { name: blueName, value: display.blue, color: "text-blue-400" }
+      : { name: redName, value: display.red, color: "text-red-400" };
 
   return (
     <div>
@@ -85,22 +92,37 @@ export function WinProbabilityGauge({
           <p className={`text-3xl font-bold tabular-nums ${favorite.color}`}>
             {favorite.value}%
           </p>
-          <p className="mx-auto mt-1 max-w-[180px] truncate text-xs text-muted-foreground">
+          <p className="mx-auto mt-0.5 max-w-[180px] truncate text-xs font-medium">
             {favorite.name}
           </p>
-        </div>
-
-        <div className="mt-2 flex justify-between font-mono text-xs">
-          <span className="text-red-400">{display.red}%</span>
-          <span className="text-blue-400">{display.blue}%</span>
+          <p className="font-mono text-[11px] text-muted-foreground">
+            {probToAmerican(favorite.value)} · {sourceLabel}
+          </p>
         </div>
       </div>
-      <p className="mt-2 text-center text-[10px] uppercase tracking-wide text-muted-foreground">
-        {sourceLabel} implied · Model {model.red}/{model.blue}
-        {marketAvailable && marketOdds && !loading
-          ? ` · Market ${marketOdds.red}/${marketOdds.blue}`
-          : " · Market pending"}
-      </p>
+
+      <div className="mx-auto mt-1 flex max-w-[240px] justify-between text-xs">
+        <div className="text-left">
+          <p className="text-red-400">{display.red}%</p>
+          <p className="truncate text-[10px] text-muted-foreground">{redName.split(" ")[0]}</p>
+        </div>
+        <div className="text-right">
+          <p className="text-blue-400">{display.blue}%</p>
+          <p className="truncate text-[10px] text-muted-foreground">{blueName.split(" ")[0]}</p>
+        </div>
+      </div>
+
+      <OddsSplitBar red={display.red} blue={display.blue} className="mx-auto mt-2 max-w-[240px]" />
+
+      {hasMarket ? (
+        <p className="mt-2 text-center text-[10px] text-muted-foreground">
+          Model {model.red}/{model.blue} · {sourceLabel} {marketOdds.red}/{marketOdds.blue}
+        </p>
+      ) : (
+        <p className="mt-2 text-center text-[10px] text-muted-foreground">
+          Model fair value · {underdog.name.split(" ")[0]} {probToAmerican(underdog.value)}
+        </p>
+      )}
 
       <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
         <ConfidenceBadge confidence={model.confidence} />
@@ -108,9 +130,9 @@ export function WinProbabilityGauge({
       </div>
 
       {model.factors && model.factors.length > 0 ? (
-        <div className="mx-auto mt-3 max-w-[240px] rounded-lg border border-border/50 bg-muted/20 p-2">
-          <p className="mb-1 text-[10px] uppercase tracking-wide text-muted-foreground">
-            Why
+        <div className="mx-auto mt-3 max-w-[280px] rounded-lg border border-border/50 bg-muted/20 p-2.5">
+          <p className="mb-1.5 text-[10px] uppercase tracking-wide text-muted-foreground">
+            Key drivers
           </p>
           <FactorList factors={model.factors} redName={redName} blueName={blueName} />
         </div>

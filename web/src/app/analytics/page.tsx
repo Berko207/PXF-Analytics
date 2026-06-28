@@ -14,8 +14,8 @@ export default async function AnalyticsPage() {
       <div>
         <h1 className="font-heading text-2xl font-bold tracking-tight">Analytics</h1>
         <p className="mt-1 text-muted-foreground">
-          Win probabilities and market-style visualizations for {card.event.name}. Market odds
-          preview what live prediction trading will look like.
+          Model predictions, market implied prices, and edge vs Rain — practical odds for every
+          bout on {card.event.name}.
         </p>
       </div>
 

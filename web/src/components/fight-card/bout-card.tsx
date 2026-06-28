@@ -2,15 +2,10 @@
 
 import { FighterStatusBadge } from "@/components/fight-card/fighter-status-badge";
 import { LevelBadge } from "@/components/fight-card/level-badge";
+import { BoutOddsPanel } from "@/components/markets/odds-ui";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useMarketOdds } from "@/hooks/use-market-odds";
 import { getFighterDisplayName, getTapologyHref, getTapologySearchTerm } from "@/lib/format";
-import { getBoutMarketContext } from "@/lib/markets";
-import {
-  ConfidenceBadge,
-  MarketStatusChip,
-} from "@/components/charts/prediction-insight";
 import type { Bout, Fighter } from "@/types/fight-card";
 import { ExternalLink } from "lucide-react";
 
@@ -73,48 +68,6 @@ function FighterRow({ fighter, corner, onSelect }: FighterRowProps) {
   );
 }
 
-function OddsComparison({ bout }: { bout: Bout }) {
-  const ctx = getBoutMarketContext(bout);
-  const { modelOdds, marketOdds, marketAvailable, loading } = useMarketOdds({
-    marketId: ctx.marketId,
-    marketStatus: ctx.marketStatus,
-    redElo: bout.red_elo ?? bout.red_corner.elo,
-    blueElo: bout.blue_elo ?? bout.blue_corner.elo,
-  });
-
-  // Prefer the server-computed model (with confidence) over the plain-Elo hook.
-  const model = bout.win_probability ?? modelOdds;
-
-  return (
-    <div className="space-y-2 text-right">
-      <div>
-        <p className="text-[10px] uppercase tracking-wide text-muted-foreground">Model</p>
-        <p className="font-mono text-sm">
-          <span className="text-red-400">{model.red}%</span>
-          <span className="mx-1 text-muted-foreground">/</span>
-          <span className="text-blue-400">{model.blue}%</span>
-        </p>
-      </div>
-      <div>
-        <p className="text-[10px] uppercase tracking-wide text-muted-foreground">Market</p>
-        {marketAvailable && marketOdds && !loading ? (
-          <p className="font-mono text-sm">
-            <span className="text-red-400">{marketOdds.red}%</span>
-            <span className="mx-1 text-muted-foreground">/</span>
-            <span className="text-blue-400">{marketOdds.blue}%</span>
-          </p>
-        ) : (
-          <p className="text-sm text-muted-foreground">Pending</p>
-        )}
-      </div>
-      <div className="flex flex-wrap items-center justify-end gap-1.5">
-        <ConfidenceBadge confidence={model.confidence} />
-        <MarketStatusChip status={ctx.marketStatus} />
-      </div>
-    </div>
-  );
-}
-
 interface BoutCardProps {
   bout: Bout;
   onFighterSelect?: (fighter: Fighter, bout: Bout) => void;
@@ -141,7 +94,7 @@ export function BoutCard({ bout, onFighterSelect }: BoutCardProps) {
             <p className="text-sm text-muted-foreground">{bout.weight_class}</p>
           </div>
 
-          <OddsComparison bout={bout} />
+          <BoutOddsPanel bout={bout} variant="compact" />
         </div>
         {bout.notes ? (
           <p className="mt-2 text-xs text-muted-foreground">{bout.notes}</p>

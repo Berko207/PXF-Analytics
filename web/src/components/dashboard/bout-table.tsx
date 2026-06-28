@@ -2,6 +2,7 @@
 
 import { FighterStatusBadge } from "@/components/fight-card/fighter-status-badge";
 import { LevelBadge } from "@/components/fight-card/level-badge";
+import { BoutOddsMini } from "@/components/markets/odds-ui";
 import { Badge } from "@/components/ui/badge";
 import {
   Table,
@@ -61,7 +62,8 @@ export function BoutTable({ bouts, onFighterSelect }: BoutTableProps) {
             <TableHead>Red</TableHead>
             <TableHead>Blue</TableHead>
             <TableHead>Level</TableHead>
-            <TableHead className="text-right">Prob.</TableHead>
+            <TableHead>Model</TableHead>
+            <TableHead>Market</TableHead>
             <TableHead className="w-10" />
           </TableRow>
         </TableHeader>
@@ -91,17 +93,21 @@ export function BoutTable({ bouts, onFighterSelect }: BoutTableProps) {
               <TableCell>
                 <LevelBadge level={bout.level} />
               </TableCell>
-              <TableCell className="text-right font-mono text-xs">
-                <div>
+              <TableCell>
+                <div className="font-mono text-xs tabular-nums">
                   <span className="text-red-400">{bout.win_probability.red}</span>
                   <span className="text-muted-foreground"> / </span>
                   <span className="text-blue-400">{bout.win_probability.blue}</span>
                 </div>
                 {bout.win_probability.confidence != null ? (
                   <div className="mt-0.5 text-[10px] uppercase tracking-wide text-muted-foreground">
-                    {confidenceLabel(bout.win_probability.confidence)} · {bout.win_probability.confidence}
+                    {confidenceLabel(bout.win_probability.confidence)} ·{" "}
+                    {bout.win_probability.confidence}
                   </div>
                 ) : null}
+              </TableCell>
+              <TableCell>
+                <BoutOddsMini bout={bout} />
               </TableCell>
               <TableCell>
                 <a

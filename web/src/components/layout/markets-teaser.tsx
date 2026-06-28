@@ -1,9 +1,13 @@
 import { Badge } from "@/components/ui/badge";
+import { getMarketsProviderKind } from "@/lib/markets";
 import { TrendingUp } from "lucide-react";
 import Link from "next/link";
 
-/** Subtle hint that prediction-market wagering is on the roadmap. */
+/** Rain prediction-market status banner — reflects mock vs live provider. */
 export function MarketsTeaser() {
+  const provider = getMarketsProviderKind();
+  const isRain = provider === "rain";
+
   return (
     <div className="rounded-xl border border-dashed border-amber-500/25 bg-gradient-to-r from-amber-500/5 via-transparent to-blue-500/5 px-4 py-3">
       <div className="flex flex-wrap items-center justify-between gap-3">
@@ -13,21 +17,42 @@ export function MarketsTeaser() {
           </div>
           <div>
             <p className="flex flex-wrap items-center gap-2 text-sm font-medium">
-              Prediction markets
+              Rain prediction markets
               <Badge
                 variant="outline"
-                className="border-amber-500/30 text-[10px] uppercase tracking-wide text-amber-400"
+                className={
+                  isRain
+                    ? "border-emerald-500/30 text-[10px] uppercase tracking-wide text-emerald-400"
+                    : "border-amber-500/30 text-[10px] uppercase tracking-wide text-amber-400"
+                }
               >
-                Coming soon
+                {isRain ? "Live SDK" : "Preview mode"}
               </Badge>
             </p>
             <p className="mt-0.5 text-xs text-muted-foreground">
-              On-chain fight markets are in development. For now, explore model odds and
-              market-style charts in{" "}
-              <Link href="/analytics" className="text-amber-400/90 hover:underline">
-                Analytics
-              </Link>
-              .
+              {isRain ? (
+                <>
+                  Connected to Rain on Arbitrum — live implied prices stream into bout cards and
+                  the{" "}
+                  <Link href="/analytics" className="text-amber-400/90 hover:underline">
+                    Analytics
+                  </Link>{" "}
+                  dashboard.
+                </>
+              ) : (
+                <>
+                  Model odds seed Rain market prices. Simulated market lines preview trading UI
+                  until{" "}
+                  <code className="rounded bg-muted px-1 py-0.5 text-[10px]">
+                    NEXT_PUBLIC_MARKETS_PROVIDER=rain
+                  </code>{" "}
+                  is set. Explore comparisons in{" "}
+                  <Link href="/analytics" className="text-amber-400/90 hover:underline">
+                    Analytics
+                  </Link>
+                  .
+                </>
+              )}
             </p>
           </div>
         </div>

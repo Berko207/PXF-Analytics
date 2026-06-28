@@ -2,19 +2,24 @@
 
 import type { FightCard } from "@/types/fight-card";
 import { getBoutProbabilitySummary } from "@/lib/chart-data";
+import { favoriteCorner } from "@/lib/odds";
 import {
   Bar,
   BarChart,
   CartesianGrid,
+  ReferenceLine,
   ResponsiveContainer,
   Tooltip,
   XAxis,
   YAxis,
 } from "recharts";
 
-/** Stacked horizontal-style bout probability overview across the card. */
+/** Stacked bout probability overview — red + blue always sum to 100%. */
 export function BoutProbabilityChart({ card }: { card?: FightCard }) {
-  const data = getBoutProbabilitySummary(card);
+  const data = getBoutProbabilitySummary(card).map((row) => ({
+    ...row,
+    favorite: favoriteCorner({ red: row.red, blue: row.blue }),
+  }));
 
   return (
     <div className="h-80 w-full">
@@ -34,16 +39,20 @@ export function BoutProbabilityChart({ card }: { card?: FightCard }) {
             tickLine={false}
             tickFormatter={(value) => `${value}%`}
           />
+          <ReferenceLine y={50} stroke="rgba(255,255,255,0.12)" strokeDasharray="3 3" />
           <Tooltip
             contentStyle={{
               background: "hsl(222 47% 8%)",
               border: "1px solid rgba(255,255,255,0.08)",
               borderRadius: "8px",
             }}
-            formatter={(value, name) => [
-              `${value ?? 0}%`,
-              name === "red" ? "Red corner" : "Blue corner",
-            ]}
+            formatter={(value, name, item) => {
+              const payload = item.payload as { favorite: "red" | "blue"; label: string };
+              const corner = name === "red" ? "Red" : "Blue";
+              const tag =
+                payload.favorite === name ? " · favorite" : "";
+              return [`${value ?? 0}%`, `${corner}${tag}`];
+            }}
             labelFormatter={(label, payload) => {
               const item = payload?.[0]?.payload;
               return item ? `${label} · ${item.label}` : label;
