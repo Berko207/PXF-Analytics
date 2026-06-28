@@ -4,6 +4,11 @@ import type { Bout } from "@/types/fight-card";
 import { useMarketOdds } from "@/hooks/use-market-odds";
 import { getBoutMarketContext } from "@/lib/markets";
 import type { WinProbability } from "@/types/fight-card";
+import {
+  ConfidenceBadge,
+  FactorList,
+  MarketStatusChip,
+} from "@/components/charts/prediction-insight";
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 
 interface WinProbabilityGaugeProps {
@@ -32,9 +37,12 @@ export function WinProbabilityGauge({
     blueElo: bout.blue_elo ?? bout.blue_corner.elo,
   });
 
+  // The model number is the server-computed prediction (with confidence +
+  // factors); the hook's plain-Elo modelOdds is only a fallback.
+  const model: WinProbability = bout.win_probability ?? modelOdds;
   const display =
     probability ??
-    (marketAvailable && marketOdds && !loading ? marketOdds : modelOdds);
+    (marketAvailable && marketOdds && !loading ? marketOdds : model);
 
   const data = [
     { name: "Red", value: display.red, fill: "#ef4444" },
@@ -88,11 +96,25 @@ export function WinProbabilityGauge({
         </div>
       </div>
       <p className="mt-2 text-center text-[10px] uppercase tracking-wide text-muted-foreground">
-        {sourceLabel} implied · Model {modelOdds.red}/{modelOdds.blue}
+        {sourceLabel} implied · Model {model.red}/{model.blue}
         {marketAvailable && marketOdds && !loading
           ? ` · Market ${marketOdds.red}/${marketOdds.blue}`
           : " · Market pending"}
       </p>
+
+      <div className="mt-3 flex flex-wrap items-center justify-center gap-2">
+        <ConfidenceBadge confidence={model.confidence} />
+        <MarketStatusChip status={ctx.marketStatus} />
+      </div>
+
+      {model.factors && model.factors.length > 0 ? (
+        <div className="mx-auto mt-3 max-w-[240px] rounded-lg border border-border/50 bg-muted/20 p-2">
+          <p className="mb-1 text-[10px] uppercase tracking-wide text-muted-foreground">
+            Why
+          </p>
+          <FactorList factors={model.factors} redName={redName} blueName={blueName} />
+        </div>
+      ) : null}
     </div>
   );
 }

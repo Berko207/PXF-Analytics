@@ -24,4 +24,10 @@ export function getMarketProvider(): MarketProvider {
 }
 
 export * from "@/lib/markets/types";
-export { eloWinProbability } from "@/lib/markets/elo";
+export { getMarketsEnv } from "@/lib/markets/env";
+export {
+  boutToMarketInput,
+  boutToMarketConfig,
+  type BoutMarketSeed,
+} from "@/lib/markets/mapping";
+export { eloWinProbability } from "@/lib/ratings/glicko";

@@ -2,6 +2,7 @@ import { eloWinProbability } from "@/lib/markets/elo";
 import type {
   BuyOptionParams,
   CreateMarketInput,
+  CreateMarketResult,
   MarketPosition,
   MarketProvider,
   OddsSnapshot,
@@ -41,16 +42,16 @@ export class MockProvider implements MarketProvider {
     return eloWinProbability(input.redElo ?? undefined, input.blueElo ?? undefined);
   }
 
-  async createMarket(input: CreateMarketInput): Promise<{ marketId: string }> {
+  async createMarket(input: CreateMarketInput): Promise<CreateMarketResult> {
     const id = input.matchupId;
-    const odds = this.getModelOdds(input);
+    const odds = input.modelOdds ?? this.getModelOdds(input);
     this.markets.set(id, {
       id,
       input,
       status: "trading_open",
       odds,
     });
-    return { marketId: id };
+    return { marketId: id, transactions: [], config: input.config ?? null };
   }
 
   private ensureMarket(marketId: string): MockMarket {

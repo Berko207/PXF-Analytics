@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import {
   DEFAULT_EVENT_SLUG,
+  FIGHTER_COLUMNS,
   mapToFightCard,
   type DbEvent,
   type DbFighter,
@@ -45,13 +46,11 @@ export async function getFighters(eventId: string): Promise<DbFighter[]> {
 
   const { data, error } = await pxf()
     .from("fighters")
-    .select(
-      "id, slug, full_name, nickname, weight_class, gym, city, country, pro_status, wins, losses, draws, no_contests, tapology_url, elo, field_status"
-    )
+    .select(FIGHTER_COLUMNS)
     .in("id", Array.from(ids));
 
   if (error) throw error;
-  return (data ?? []) as DbFighter[];
+  return (data ?? []) as unknown as DbFighter[];
 }
 
 /** Matchups for an event with corners and optional prediction market row. */
@@ -65,14 +64,8 @@ export async function getMatchups(eventId: string): Promise<DbMatchup[]> {
       bout_order,
       weight_class,
       is_title_fight,
-      red_fighter:red_fighter_id (
-        id, slug, full_name, nickname, weight_class, gym, city, country,
-        pro_status, wins, losses, draws, no_contests, tapology_url, elo, field_status
-      ),
-      blue_fighter:blue_fighter_id (
-        id, slug, full_name, nickname, weight_class, gym, city, country,
-        pro_status, wins, losses, draws, no_contests, tapology_url, elo, field_status
-      ),
+      red_fighter:red_fighter_id ( ${FIGHTER_COLUMNS} ),
+      blue_fighter:blue_fighter_id ( ${FIGHTER_COLUMNS} ),
       prediction_markets (
         id, matchup_id, rain_market_id, status, red_implied_prob, blue_implied_prob
       )

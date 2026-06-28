@@ -11,7 +11,7 @@ import type {
   MarketStatus,
   WinProbability,
 } from "@/types/fight-card";
-import { eloWinProbability } from "@/lib/markets/elo";
+import { predictBout, type RatedFighter } from "@/lib/ratings";
 
 const DEFAULT_EVENT_SLUG = "pxf-50";
 
@@ -52,8 +52,26 @@ export interface DbFighter {
   no_contests: number | null;
   tapology_url: string | null;
   elo: number | null;
+  elo_uncertainty?: number | null;
+  date_of_birth?: string | null;
+  height_cm?: number | null;
+  reach_cm?: number | null;
+  last_fight_date?: string | null;
+  wins_ko?: number | null;
+  wins_sub?: number | null;
+  wins_dec?: number | null;
+  losses_ko?: number | null;
+  losses_sub?: number | null;
+  losses_dec?: number | null;
   field_status: Record<string, string> | null;
 }
+
+/** Columns every fighter query should select to feed the prediction engine. */
+export const FIGHTER_COLUMNS =
+  "id, slug, full_name, nickname, weight_class, gym, city, country, pro_status, " +
+  "wins, losses, draws, no_contests, tapology_url, elo, elo_uncertainty, " +
+  "date_of_birth, height_cm, reach_cm, last_fight_date, " +
+  "wins_ko, wins_sub, wins_dec, losses_ko, losses_sub, losses_dec, field_status";
 
 export interface DbPredictionMarket {
   id: string;
@@ -184,13 +202,36 @@ function mapMarket(row: DbPredictionMarket | null, matchupId: string): BoutMarke
   };
 }
 
-function winProbabilityFromElo(
-  redElo: number | null | undefined,
-  blueElo: number | null | undefined
+/** Adapt a raw DB fighter row into the prediction engine's input shape. */
+export function toRated(row: DbFighter | null): RatedFighter {
+  if (!row) return {};
+  return {
+    display_name: row.full_name,
+    elo: row.elo,
+    elo_uncertainty: row.elo_uncertainty,
+    wins: row.wins,
+    losses: row.losses,
+    draws: row.draws,
+    no_contests: row.no_contests,
+    wins_ko: row.wins_ko,
+    wins_sub: row.wins_sub,
+    wins_dec: row.wins_dec,
+    losses_ko: row.losses_ko,
+    losses_sub: row.losses_sub,
+    losses_dec: row.losses_dec,
+    last_fight_date: row.last_fight_date,
+    date_of_birth: row.date_of_birth,
+    height_cm: row.height_cm,
+    reach_cm: row.reach_cm,
+    pro_status: row.pro_status,
+  };
+}
+
+function winProbabilityFromRows(
+  red: DbFighter | null,
+  blue: DbFighter | null
 ): WinProbability {
-  const red = redElo ?? 1500;
-  const blue = blueElo ?? 1500;
-  return eloWinProbability(red, blue);
+  return predictBout(toRated(red), toRated(blue));
 }
 
 function mapMatchup(row: DbMatchup): Bout {
@@ -244,13 +285,10 @@ function mapMatchup(row: DbMatchup): Bout {
     debut_fighters: debutNames,
   };
 
-  const implied =
-    marketRow?.red_implied_prob != null && marketRow?.blue_implied_prob != null
-      ? {
-          red: Math.round(Number(marketRow.red_implied_prob)),
-          blue: Math.round(Number(marketRow.blue_implied_prob)),
-        }
-      : winProbabilityFromElo(redCorner.elo, blueCorner.elo);
+  // win_probability is always the MODEL'S prediction (the analytics layer).
+  // Live market-implied prices, when a Rain market exists, are surfaced
+  // separately via `market` rather than overwriting the model.
+  const winProbability = winProbabilityFromRows(row.red_fighter, row.blue_fighter);
 
   return {
     bout_number: row.bout_order,
@@ -259,7 +297,7 @@ function mapMatchup(row: DbMatchup): Bout {
     level: boutLevel(row.red_fighter, row.blue_fighter),
     is_title_fight: row.is_title_fight,
     notes: null,
-    win_probability: implied,
+    win_probability: winProbability,
     red_corner: redCorner,
     blue_corner: blueCorner,
     summary,

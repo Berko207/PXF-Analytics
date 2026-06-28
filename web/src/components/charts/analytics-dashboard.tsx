@@ -105,13 +105,14 @@ function BoutOddsInline({ bout }: { bout: Bout }) {
     redElo: bout.red_elo ?? bout.red_corner.elo,
     blueElo: bout.blue_elo ?? bout.blue_corner.elo,
   });
+  const model = bout.win_probability ?? modelOdds;
 
   return (
     <p className="font-mono text-sm">
       <span className="text-muted-foreground">Model </span>
-      <span className="text-red-400">{modelOdds.red}%</span>
+      <span className="text-red-400">{model.red}%</span>
       <span className="text-muted-foreground"> / </span>
-      <span className="text-blue-400">{modelOdds.blue}%</span>
+      <span className="text-blue-400">{model.blue}%</span>
       <span className="mx-2 text-muted-foreground">·</span>
       <span className="text-muted-foreground">Market </span>
       {marketAvailable && marketOdds && !loading ? (
@@ -135,17 +136,18 @@ function BoutOddsLegend({ bout, className }: { bout: Bout; className?: string })
     redElo: bout.red_elo ?? bout.red_corner.elo,
     blueElo: bout.blue_elo ?? bout.blue_corner.elo,
   });
+  const model = bout.win_probability ?? modelOdds;
 
   return (
     <div className={cn("grid grid-cols-2 gap-3 text-center text-sm", className)}>
       <div className="rounded-lg border border-red-500/20 bg-red-500/5 p-3">
         <p className="text-red-400">{bout.red_corner.display_name}</p>
-        <p className="mt-1 font-mono text-xl">{modelOdds.red}%</p>
+        <p className="mt-1 font-mono text-xl">{model.red}%</p>
         <p className="text-[10px] uppercase tracking-wide text-muted-foreground">Model</p>
       </div>
       <div className="rounded-lg border border-blue-500/20 bg-blue-500/5 p-3">
         <p className="text-blue-400">{bout.blue_corner.display_name}</p>
-        <p className="mt-1 font-mono text-xl">{modelOdds.blue}%</p>
+        <p className="mt-1 font-mono text-xl">{model.blue}%</p>
         <p className="text-[10px] uppercase tracking-wide text-muted-foreground">Model</p>
       </div>
       <div className="col-span-2 rounded-lg border border-border/60 bg-muted/20 p-3">

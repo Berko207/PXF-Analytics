@@ -12,6 +12,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { getFighterDisplayName, getTapologyHref } from "@/lib/format";
+import { confidenceLabel } from "@/lib/ratings";
 import type { Bout, Fighter } from "@/types/fight-card";
 import { ExternalLink } from "lucide-react";
 
@@ -91,9 +92,16 @@ export function BoutTable({ bouts, onFighterSelect }: BoutTableProps) {
                 <LevelBadge level={bout.level} />
               </TableCell>
               <TableCell className="text-right font-mono text-xs">
-                <span className="text-red-400">{bout.win_probability.red}</span>
-                <span className="text-muted-foreground"> / </span>
-                <span className="text-blue-400">{bout.win_probability.blue}</span>
+                <div>
+                  <span className="text-red-400">{bout.win_probability.red}</span>
+                  <span className="text-muted-foreground"> / </span>
+                  <span className="text-blue-400">{bout.win_probability.blue}</span>
+                </div>
+                {bout.win_probability.confidence != null ? (
+                  <div className="mt-0.5 text-[10px] uppercase tracking-wide text-muted-foreground">
+                    {confidenceLabel(bout.win_probability.confidence)} · {bout.win_probability.confidence}
+                  </div>
+                ) : null}
               </TableCell>
               <TableCell>
                 <a

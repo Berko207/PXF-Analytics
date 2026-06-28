@@ -63,9 +63,19 @@ export interface BoutMarketInfo {
   rain_market_id: string | null;
 }
 
+export interface PredictionFactor {
+  label: string;
+  /** Signed percentage-point effect on the red corner (+ favors red). */
+  impact: number;
+}
+
 export interface WinProbability {
   red: number;
   blue: number;
+  /** 0–100 model confidence in the pick (data quality × decisiveness). */
+  confidence?: number;
+  /** Ordered drivers of the prediction, largest magnitude first. */
+  factors?: PredictionFactor[];
 }
 
 export interface BoutSummary {

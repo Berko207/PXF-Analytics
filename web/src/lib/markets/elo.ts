@@ -1,14 +1,7 @@
-const DEFAULT_ELO = 1500;
-
-/** Logistic win probability from ELO ratings (returns integer percents summing to 100). */
-export function eloWinProbability(
-  redElo: number = DEFAULT_ELO,
-  blueElo: number = DEFAULT_ELO
-): { red: number; blue: number } {
-  const redProb = 1 / (1 + 10 ** ((blueElo - redElo) / 400));
-  const red = Math.round(redProb * 100);
-  const blue = Math.max(0, 100 - red);
-  return { red, blue };
-}
-
-export { DEFAULT_ELO };
+/**
+ * @deprecated The rating logic now lives in `@/lib/ratings`. This module is a
+ * thin re-export kept so existing imports keep compiling. Prefer
+ * `predictBout` for predictions and `eloWinProbability` only for the legacy
+ * plain-Elo display.
+ */
+export { eloWinProbability, DEFAULT_ELO } from "@/lib/ratings/glicko";

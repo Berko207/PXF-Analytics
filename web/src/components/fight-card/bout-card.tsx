@@ -7,6 +7,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useMarketOdds } from "@/hooks/use-market-odds";
 import { getFighterDisplayName, getTapologyHref, getTapologySearchTerm } from "@/lib/format";
 import { getBoutMarketContext } from "@/lib/markets";
+import {
+  ConfidenceBadge,
+  MarketStatusChip,
+} from "@/components/charts/prediction-insight";
 import type { Bout, Fighter } from "@/types/fight-card";
 import { ExternalLink } from "lucide-react";
 
@@ -78,14 +82,17 @@ function OddsComparison({ bout }: { bout: Bout }) {
     blueElo: bout.blue_elo ?? bout.blue_corner.elo,
   });
 
+  // Prefer the server-computed model (with confidence) over the plain-Elo hook.
+  const model = bout.win_probability ?? modelOdds;
+
   return (
     <div className="space-y-2 text-right">
       <div>
         <p className="text-[10px] uppercase tracking-wide text-muted-foreground">Model</p>
         <p className="font-mono text-sm">
-          <span className="text-red-400">{modelOdds.red}%</span>
+          <span className="text-red-400">{model.red}%</span>
           <span className="mx-1 text-muted-foreground">/</span>
-          <span className="text-blue-400">{modelOdds.blue}%</span>
+          <span className="text-blue-400">{model.blue}%</span>
         </p>
       </div>
       <div>
@@ -99,6 +106,10 @@ function OddsComparison({ bout }: { bout: Bout }) {
         ) : (
           <p className="text-sm text-muted-foreground">Pending</p>
         )}
+      </div>
+      <div className="flex flex-wrap items-center justify-end gap-1.5">
+        <ConfidenceBadge confidence={model.confidence} />
+        <MarketStatusChip status={ctx.marketStatus} />
       </div>
     </div>
   );
