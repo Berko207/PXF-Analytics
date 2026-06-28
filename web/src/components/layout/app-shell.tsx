@@ -1,6 +1,7 @@
 "use client";
 
 import { SiteNavActive } from "@/components/layout/site-nav";
+import { ConnectButton } from "@/components/wallet/connect-button";
 import { Badge } from "@/components/ui/badge";
 import { usePathname } from "next/navigation";
 
@@ -25,7 +26,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               Beta
             </Badge>
           </div>
-          <SiteNavActive pathname={pathname} />
+          <div className="flex items-center gap-3">
+            <SiteNavActive pathname={pathname} />
+            <ConnectButton />
+          </div>
         </div>
       </header>
       <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">{children}</main>

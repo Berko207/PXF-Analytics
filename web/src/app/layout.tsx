@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import localFont from "next/font/local";
 
 import { AppShell } from "@/components/layout/app-shell";
+import { WalletProvider } from "@/components/wallet/wallet-provider";
 import { cn } from "@/lib/utils";
 
 import "./globals.css";
@@ -38,7 +39,9 @@ export default function RootLayout({
           "min-h-screen bg-background font-sans antialiased"
         )}
       >
-        <AppShell>{children}</AppShell>
+        <WalletProvider>
+          <AppShell>{children}</AppShell>
+        </WalletProvider>
       </body>
     </html>
   );

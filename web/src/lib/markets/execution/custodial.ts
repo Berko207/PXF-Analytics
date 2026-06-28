@@ -2,8 +2,8 @@
 import { RainAA } from "@buidlrrr/rain-sdk";
 import { createWalletClient, http } from "viem";
 import { privateKeyToAccount } from "viem/accounts";
-import { arbitrum } from "viem/chains";
 
+import { getActiveChain } from "@/lib/wallet/chains";
 import { getMarketsEnv } from "@/lib/markets/env";
 import type { MarketExecutor } from "@/lib/markets/execution/types";
 import type { Hex, RawTx } from "@/lib/markets/types";
@@ -30,17 +30,18 @@ export class CustodialExecutor implements MarketExecutor {
       );
     }
     if (!this.aa) {
+      const chain = getActiveChain();
       const account = privateKeyToAccount(pk);
       const walletClient = createWalletClient({
         account,
-        chain: arbitrum,
+        chain,
         transport: http(env.rpcUrl),
       });
       this.aa = new RainAA({
         walletClient,
         alchemyApiKey: env.alchemyApiKey,
         paymasterPolicyId: env.paymasterPolicyId,
-        chain: arbitrum,
+        chain,
         rpcUrl: env.rpcUrl,
       });
     }
